@@ -120,11 +120,11 @@ export const portfolio: PortfolioData = {
       techStack: ["TypeScript", "Node.js", "Prisma", "Tailwind CSS"]
     },
     {
-      name: "AVAA RMS",
+      name: "Project-Zfile RMS",
       role: "Full-Stack Developer",
       date: "January 2026",
       description:
-        "Built a restaurant management platform focused on operational speed and real-time data visibility.",
+        "Built a resource management platform focused on operational speed and real-time data visibility.",
       highlights: [
         "Implemented order lifecycle tracking from placement to fulfillment",
         "Built inventory monitoring with low-stock alerts",
@@ -138,7 +138,7 @@ export const portfolio: PortfolioData = {
       role: "Full-Stack Developer",
       date: "February 2026",
       description:
-        "Developed an e-commerce platform for listing, purchasing, and managing entertainment-related products.",
+        "Developed an e-commerce platform for listing, renting, and managing entertainment-related products.",
       highlights: [
         "Built product catalog browsing with category and search filters",
         "Implemented cart, checkout, and order confirmation workflows",

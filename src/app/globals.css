@@ -2963,26 +2963,37 @@ body {
     color 220ms ease,
     border-color 220ms ease,
     box-shadow 220ms ease,
-    transform 220ms ease !important;
+    transform 220ms ease,
+    filter 220ms ease !important;
 }
 
 .project-archive-nav-btn:hover,
 .project-archive-nav-btn:focus-visible {
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.03) !important;
+  filter: brightness(1.08) !important;
+}
+
+.project-archive-nav-btn:active {
+  transform: translateY(0) scale(0.99) !important;
 }
 
 .project-archive-nav-btn--light:hover {
   background-color: #000 !important;
   color: #fff !important;
   border-color: rgba(0, 0, 0, 0.92) !important;
-  box-shadow: 0 8px 18px -12px rgba(0, 0, 0, 0.6) !important;
+  box-shadow:
+    0 10px 22px -12px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(0, 0, 0, 0.85) inset !important;
 }
 
 .project-archive-nav-btn--dark:hover {
   background-color: #fff !important;
   color: #000 !important;
   border-color: rgba(255, 255, 255, 0.9) !important;
-  box-shadow: 0 8px 18px -12px rgba(255, 255, 255, 0.65) !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.95) inset,
+    0 0 18px rgba(255, 255, 255, 0.5),
+    0 10px 22px -12px rgba(255, 255, 255, 0.75) !important;
 }
 
 [data-theme-swap="dark"] .project-archive-hud {

@@ -1326,7 +1326,7 @@ export default function Home() {
                             "project-archive-nav-btn rounded-lg border border-black/15 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-black/70 transition",
                             isDarkMode
                               ? "project-archive-nav-btn--dark"
-                              : "project-archive-nav-btn--light",
+                              : "project-archive-nav-btn--light hover:bg-black hover:text-white",
                           )}
                         >
                           Prev
@@ -1340,7 +1340,7 @@ export default function Home() {
                             "project-archive-nav-btn rounded-lg border border-black/15 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-black/70 transition",
                             isDarkMode
                               ? "project-archive-nav-btn--dark"
-                              : "project-archive-nav-btn--light",
+                              : "project-archive-nav-btn--light hover:bg-black hover:text-white",
                           )}
                         >
                           Next
