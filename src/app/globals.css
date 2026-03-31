@@ -2812,6 +2812,38 @@ body {
   color: rgba(255, 255, 255, 0.94) !important;
 }
 
+/* Light mode: black icon plate on hover */
+[data-theme-swap="light"] .skill-chip-row:hover .skill-chip-row__icon {
+  background-color: #000 !important;
+  border-color: rgba(0, 0, 0, 0.85) !important;
+  color: #fff !important;
+}
+
+[data-theme-swap="light"] .skill-chip-row:hover .skill-chip-row__icon svg,
+[data-theme-swap="light"] .skill-chip-row:hover .skill-chip-row__icon svg * {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+/* Reverse light-mode icon hover behavior for dark mode rows */
+[data-theme-swap="dark"] .skill-chip-row__icon {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+}
+
+[data-theme-swap="dark"] .skill-chip-row:hover .skill-chip-row__icon {
+  background-color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.9) !important;
+  color: #000 !important;
+}
+
+[data-theme-swap="dark"] .skill-chip-row:hover .skill-chip-row__icon svg,
+[data-theme-swap="dark"] .skill-chip-row:hover .skill-chip-row__icon svg * {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
 [data-theme-swap="dark"] .nav-link-holo {
   color: rgba(255, 255, 255, 0.74) !important;
 }
@@ -2922,6 +2954,35 @@ body {
 
 [data-theme-swap="dark"] .project-archive-dot.project-archive-dot--active {
   background-color: #fff !important;
+}
+
+/* Project Archive nav buttons: explicit mode classes to avoid theme override conflicts */
+.project-archive-nav-btn {
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease !important;
+}
+
+.project-archive-nav-btn:hover,
+.project-archive-nav-btn:focus-visible {
+  transform: translateY(-1px);
+}
+
+.project-archive-nav-btn--light:hover {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: rgba(0, 0, 0, 0.92) !important;
+  box-shadow: 0 8px 18px -12px rgba(0, 0, 0, 0.6) !important;
+}
+
+.project-archive-nav-btn--dark:hover {
+  background-color: #fff !important;
+  color: #000 !important;
+  border-color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 8px 18px -12px rgba(255, 255, 255, 0.65) !important;
 }
 
 [data-theme-swap="dark"] .project-archive-hud {

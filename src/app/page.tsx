@@ -243,7 +243,7 @@ function SkillChip({ label, iconMap }: { label: string; iconMap: Record<string, 
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <span className="flex size-8 items-center justify-center rounded-lg border border-black/10 bg-black/[0.03] text-black/80 transition-colors duration-300 group-hover:bg-black group-hover:text-white">
+      <span className="skill-chip-row__icon flex size-8 items-center justify-center rounded-lg border border-black/10 bg-black/[0.03] text-black/80 transition-colors duration-300">
         <Icon className="size-4" aria-hidden />
       </span>
       <span className="relative z-[1] text-sm font-semibold text-black/80">{label}</span>
@@ -1322,7 +1322,12 @@ export default function Home() {
                               (prev - 1 + projects.length) % projects.length,
                             )
                           }
-                          className="rounded-lg border border-black/15 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-black/70 transition hover:bg-black hover:text-white"
+                          className={cx(
+                            "project-archive-nav-btn rounded-lg border border-black/15 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-black/70 transition",
+                            isDarkMode
+                              ? "project-archive-nav-btn--dark"
+                              : "project-archive-nav-btn--light",
+                          )}
                         >
                           Prev
                         </button>
@@ -1331,7 +1336,12 @@ export default function Home() {
                           onClick={() =>
                             setActiveProjectIndex((prev) => (prev + 1) % projects.length)
                           }
-                          className="rounded-lg border border-black/15 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-black/70 transition hover:bg-black hover:text-white"
+                          className={cx(
+                            "project-archive-nav-btn rounded-lg border border-black/15 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-black/70 transition",
+                            isDarkMode
+                              ? "project-archive-nav-btn--dark"
+                              : "project-archive-nav-btn--light",
+                          )}
                         >
                           Next
                         </button>
