@@ -1,34 +1,62 @@
 import { NextResponse } from "next/server";
 
-const COUNT_API_NAMESPACE = "von-asley-malillos";
-const COUNT_API_KEY = "e-portfolio-total-views";
+export const dynamic = "force-dynamic";
 
-async function requestCountApi(mode: "get" | "hit") {
-  const url = `https://api.countapi.xyz/${mode}/${COUNT_API_NAMESPACE}/${COUNT_API_KEY}`;
-  const response = await fetch(url, {
-    method: "GET",
+const COUNTER_KEY = "portfolio:views:total";
+let inMemoryViews = 0;
+
+async function kvGetCount(): Promise<number | null> {
+  const url = process.env.KV_REST_API_URL;
+  const token = process.env.KV_REST_API_TOKEN;
+  if (!url || !token) return null;
+
+  const response = await fetch(`${url}/get/${COUNTER_KEY}`, {
+    headers: { Authorization: `Bearer ${token}` },
     cache: "no-store",
   });
+  if (!response.ok) throw new Error("KV get failed");
 
-  if (!response.ok) return null;
-  const payload = (await response.json()) as { value?: number };
-  return typeof payload.value === "number" ? payload.value : null;
+  const data = (await response.json()) as { result: string | null };
+  return Number(data.result ?? 0);
 }
 
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const mode = searchParams.get("mode") === "hit" ? "hit" : "get";
+async function kvIncrement(): Promise<number | null> {
+  const url = process.env.KV_REST_API_URL;
+  const token = process.env.KV_REST_API_TOKEN;
+  if (!url || !token) return null;
 
+  const response = await fetch(`${url}/incr/${COUNTER_KEY}`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${token}` },
+    cache: "no-store",
+  });
+  if (!response.ok) throw new Error("KV incr failed");
+
+  const data = (await response.json()) as { result: string | number };
+  return Number(data.result);
+}
+
+export async function GET() {
   try {
-    let value = await requestCountApi(mode);
-
-    // Self-heal: if "get" is empty/missing, create key with a first "hit".
-    if (value === null && mode === "get") {
-      value = await requestCountApi("hit");
-    }
-
-    return NextResponse.json({ value }, { status: 200 });
+    const kvCount = await kvGetCount();
+    const count = kvCount ?? inMemoryViews;
+    return NextResponse.json({ count, provider: kvCount === null ? "memory" : "kv" });
   } catch {
-    return NextResponse.json({ value: null }, { status: 200 });
+    return NextResponse.json({ count: inMemoryViews, provider: "memory" });
   }
 }
+
+export async function POST() {
+  try {
+    const kvCount = await kvIncrement();
+    if (kvCount !== null) {
+      return NextResponse.json({ count: kvCount, provider: "kv" });
+    }
+  } catch {
+    // fall through to memory fallback
+  }
+
+  inMemoryViews += 1;
+  return NextResponse.json({ count: inMemoryViews, provider: "memory" });
+}
+

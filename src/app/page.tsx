@@ -25,6 +25,7 @@ import {
   SiSupabase,
   SiTailwindcss,
   SiTypescript,
+  SiVercel,
   SiVscodium,
   SiXampp,
   SiLaragon,
@@ -865,7 +866,6 @@ export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const [openMilestoneId, setOpenMilestoneId] = useState<string | null>(null);
-  const [portfolioViews, setPortfolioViews] = useState<number | null>(null);
   const links = portfolio.contact.socials;
   const projects = portfolio.projects;
   const primaryProject = projects[0];
@@ -927,43 +927,6 @@ export default function Home() {
       isDarkMode ? "dark" : "light",
     );
   }, [isDarkMode]);
-
-  useEffect(() => {
-    let cancelled = false;
-    let pollTimer: number | undefined;
-
-    const sessionKey = "portfolio-view-counted";
-    const hasCountedThisSession = window.sessionStorage.getItem(sessionKey) === "1";
-    const fetchMode = hasCountedThisSession ? "get" : "hit";
-
-    const fetchViews = async (mode: "get" | "hit") => {
-      try {
-        const response = await fetch(`/api/views?mode=${mode}`, { cache: "no-store" });
-        const payload = (await response.json()) as { value?: number };
-        if (!cancelled && typeof payload.value === "number") {
-          setPortfolioViews(payload.value);
-        }
-      } catch {
-        // Keep current value when transient network/API errors happen.
-      }
-    };
-
-    void fetchViews(fetchMode);
-    if (!hasCountedThisSession) {
-      window.sessionStorage.setItem(sessionKey, "1");
-    }
-
-    pollTimer = window.setInterval(() => {
-      void fetchViews("get");
-    }, 15000);
-
-    return () => {
-      cancelled = true;
-      if (pollTimer) {
-        window.clearInterval(pollTimer);
-      }
-    };
-  }, []);
 
   useEffect(() => {
     if (!unlocked) {
@@ -1616,10 +1579,27 @@ export default function Home() {
                     </p>
                     <p className="mt-1 text-sm font-semibold text-black">{portfolio.fullName}</p>
                     <p className="mt-1 text-xs text-black/65">
-                      Built with TypeScript, Next.js, and Tailwind CSS. Deployed on Vercel.
-                    </p>
-                    <p className="mt-2 overview-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-black/70">
-                      Live Views: {portfolioViews?.toLocaleString() ?? "Loading..."}
+                      Built with{" "}
+                      <span className="inline-flex items-center gap-1.5 align-middle">
+                        <SiTypescript className="size-3.5" aria-hidden />
+                        <span>TypeScript</span>
+                      </span>
+                      ,{" "}
+                      <span className="inline-flex items-center gap-1.5 align-middle">
+                        <SiNextdotjs className="size-3.5" aria-hidden />
+                        <span>Next.js</span>
+                      </span>
+                      , and{" "}
+                      <span className="inline-flex items-center gap-1.5 align-middle">
+                        <SiTailwindcss className="size-3.5" aria-hidden />
+                        <span>Tailwind CSS</span>
+                      </span>
+                      . Deployed on{" "}
+                      <span className="inline-flex items-center gap-1.5 align-middle">
+                        <SiVercel className="size-3.5" aria-hidden />
+                        <span>Vercel</span>
+                      </span>
+                      .
                     </p>
                   </div>
 
