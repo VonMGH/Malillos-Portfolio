@@ -942,13 +942,9 @@ export default function Home() {
         const payload = (await response.json()) as { value?: number };
         if (!cancelled && typeof payload.value === "number") {
           setPortfolioViews(payload.value);
-        } else if (!cancelled) {
-          setPortfolioViews(0);
         }
       } catch {
-        if (!cancelled) {
-          setPortfolioViews(0);
-        }
+        // Keep current value when transient network/API errors happen.
       }
     };
 
