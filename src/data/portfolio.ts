@@ -68,7 +68,7 @@ export const portfolio: PortfolioData = {
       role: "Backend Developer",
       date: "March 2024",
       description:
-        "Built a backend-focused employee management platform to streamline attendance and operational records.",
+        "Currently taking Bachelor of Science in Information Technology, Major in Service Management Program at Laguna State Polytechnic University - San Pablo City Campus.",
       highlights: [
         "Implemented an attendance system using employee IDs",
         "Developed secure login and role-based access controls for staff and administrators",

@@ -14,8 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "E-Portfolio",
+  title: "Malillos | E-Portfolio",
   description: "Personal e-portfolio",
+  icons: {
+    icon: "/tab-identity.svg",
+  },
 };
 
 export default function RootLayout({

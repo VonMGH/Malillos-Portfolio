@@ -331,6 +331,14 @@ function HeaderNav({
     ["Achievements", "#achievements"],
     ["Contact", "#contact"],
   ] as const;
+  const browserStateByHref: Record<string, { title: string; icon: string }> = {
+    "#top": { title: "Malillos | Identity", icon: "/tab-identity.svg" },
+    "#branding": { title: "Malillos | Branding", icon: "/tab-branding.svg" },
+    "#skills": { title: "Malillos | Skills", icon: "/tab-skills.svg" },
+    "#project": { title: "Malillos | Project", icon: "/tab-project.svg" },
+    "#achievements": { title: "Malillos | Achievements", icon: "/tab-achievements.svg" },
+    "#contact": { title: "Malillos | Contact", icon: "/tab-contact.svg" },
+  };
   const [activeHref, setActiveHref] = useState<(typeof items)[number][1]>("#branding");
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
@@ -390,6 +398,28 @@ function HeaderNav({
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
+
+  useEffect(() => {
+    const state = browserStateByHref[activeHref] ?? browserStateByHref["#top"];
+    if (state) {
+      document.title = state.title;
+      const cacheBustedHref = `${state.icon}?v=${activeHref.replace("#", "") || "top"}`;
+
+      const upsertIconLink = (id: string, rel: string) => {
+        const iconLink =
+          (document.getElementById(id) as HTMLLinkElement | null) ??
+          (document.createElement("link") as HTMLLinkElement);
+        iconLink.id = id;
+        iconLink.rel = rel;
+        iconLink.type = "image/svg+xml";
+        iconLink.href = cacheBustedHref;
+        if (!iconLink.parentNode) document.head.appendChild(iconLink);
+      };
+
+      upsertIconLink("dynamic-favicon", "icon");
+      upsertIconLink("dynamic-shortcut-icon", "shortcut icon");
+    }
+  }, [activeHref]);
 
   useEffect(() => {
     document.body.style.overflow = mobileNavOpen ? "hidden" : "";
@@ -515,8 +545,9 @@ function HeaderNav({
 
       <aside
         id="mobile-sidebar-nav"
+        data-mode={isDarkMode ? "dark" : "light"}
         className={cx(
-          "fixed left-0 top-0 z-[70] h-screen w-[min(82vw,18rem)] border-r border-black/15 bg-white shadow-2xl transition-transform duration-300 ease-out sm:hidden",
+          "mobile-sidebar fixed left-0 top-0 z-[70] h-screen w-[min(82vw,18rem)] border-r border-black/15 bg-white shadow-2xl transition-transform duration-300 ease-out sm:hidden",
           mobileNavOpen ? "translate-x-0" : "-translate-x-full",
         )}
         aria-label="Mobile navigation"
@@ -563,7 +594,10 @@ function HeaderNav({
               onClick={handleNavClick(href, true)}
               className={cx(
                 "rounded-md px-3 py-2.5 text-sm font-medium tracking-wide text-black/70 transition-colors hover:bg-black/[0.04] hover:text-black",
-                activeHref === href && "bg-black text-white hover:bg-black hover:text-white",
+                activeHref === href &&
+                  (isDarkMode
+                    ? "mobile-sidebar-link-active-dark"
+                    : "mobile-sidebar-link-active-light"),
               )}
               aria-current={activeHref === href ? "page" : undefined}
             >
