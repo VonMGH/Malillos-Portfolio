@@ -12,6 +12,12 @@ export type PortfolioProject = {
   techStack: string[];
 };
 
+export type PortfolioMilestone = {
+  title: string;
+  meta: string;
+  details: string;
+};
+
 export type PortfolioData = {
   fullName: string;
   professionalTitle: string;
@@ -24,8 +30,8 @@ export type PortfolioData = {
   technicalSkills: string[];
   tools: string[];
   projects: PortfolioProject[];
-  achievements: string[];
-  certifications: string[];
+  achievements: PortfolioMilestone[];
+  certifications: PortfolioMilestone[];
 };
 
 export const portfolio: PortfolioData = {
@@ -143,16 +149,61 @@ export const portfolio: PortfolioData = {
     }
   ],
   achievements: [
-    "Reduced API latency by 20% by optimizing payload size and caching",
-    "Created 10+ reusable UI components to speed up delivery"
+    {
+      title: "Reduced API latency by 20% by optimizing payload size and caching",
+      meta: "Performance Impact",
+      details:
+        "Improved request responsiveness by refining payload strategy and introducing caching where it added measurable value.",
+    },
+    {
+      title: "Created 10+ reusable UI components to speed up delivery",
+      meta: "Delivery Acceleration",
+      details:
+        "Standardized UI building blocks to reduce repeat work and improve consistency across screens and features.",
+    },
   ],
   certifications: [
-    "Lean Six Sigma",
-    "IBM SkillsBuild Software Engineering for Web Developers Certificate",
-    "Software Engineer Pre-Apprenticeship - V3",
-    "Front-End Web Development",
-    "Security Architecture for System Engineers",
-    "Offensive Security Capture the Flag - Pentest Quest: Nmap and Kali",
-    "Security Operations Center in Practice"
+    {
+      title: "Lean Six Sigma",
+      meta: "Validated Learning Path",
+      details:
+        "Focused on process improvement methods, waste reduction, and structured problem-solving techniques.",
+    },
+    {
+      title: "IBM SkillsBuild Software Engineering for Web Developers Certificate",
+      meta: "Verified Credential",
+      details:
+        "Covered core software engineering practices for web development, including building, testing, and deploying web applications.",
+    },
+    {
+      title: "Software Engineer Pre-Apprenticeship - V3",
+      meta: "Career Track",
+      details:
+        "Strengthened foundational engineering skills through structured coursework and hands-on practice aligned with industry workflows.",
+    },
+    {
+      title: "Front-End Web Development",
+      meta: "Specialization",
+      details:
+        "Built skills in responsive UI implementation, component-based layout, and modern front-end development practices.",
+    },
+    {
+      title: "Security Architecture for System Engineers",
+      meta: "Security Focus",
+      details:
+        "Introduced principles for designing secure systems, threat modeling, and architectural controls for risk reduction.",
+    },
+    {
+      title: "Offensive Security Capture the Flag - Pentest Quest: Nmap and Kali",
+      meta: "Hands-on Lab",
+      details:
+        "Practiced reconnaissance and basic penetration testing workflows using common tooling like Nmap and Kali Linux in challenge-based exercises.",
+    },
+    {
+      title: "Security Operations Center in Practice",
+      meta: "Operational Skills",
+      details:
+        "Covered SOC fundamentals, alert triage, and incident response concepts used in real-world security monitoring.",
+    },
   ]
 };

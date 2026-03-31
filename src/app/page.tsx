@@ -400,128 +400,73 @@ function HeaderNav({
 
   return (
     <div className="sticky top-0 z-50 relative isolate w-full min-w-0">
-      <motion.header 
-        initial={{ x: "100%" }}
-        animate={{ x: 0 }}
-        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-[2] overflow-x-clip border-b border-black/10 bg-white/95 backdrop-blur-xl"
-      >
-        <div className="nav-topbar-hud" aria-hidden>
-          <div className="nav-topbar-hud__grid" />
-          <div className="nav-topbar-hud__shine" />
-          <span className="nav-topbar-hud__corner nav-topbar-hud__corner--tl" />
-          <span className="nav-topbar-hud__corner nav-topbar-hud__corner--tr" />
-          <span className="nav-topbar-hud__corner nav-topbar-hud__corner--bl" />
-          <span className="nav-topbar-hud__corner nav-topbar-hud__corner--br" />
-        </div>
-        <div className="nav-holo" aria-hidden>
-          <div className="nav-holo__tunnel" />
-          <div className="nav-holo__sweep" />
-          <div className="nav-holo__noise" />
-          <div className="nav-holo__ticks" />
-          <div className="nav-holo__scans" />
-          <NavHoloShapes />
-        </div>
-        <Container>
-          <div className="relative z-[2] flex h-16 items-center sm:grid sm:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] sm:items-center">
-            <a
-              className="min-w-0 shrink-0 justify-self-start text-black sm:pr-2"
-              href="#top"
-              aria-label="Back to top"
-              onClick={handleNavClick("#top")}
-            >
-              <span className="inline-flex items-center gap-2.5 px-1 py-0.5">
-                <span className="inline-flex flex-col items-center">
-                  <SiLaravel className="h-4 w-4" aria-hidden />
-                  <span className="mt-1 inline-flex items-center gap-2">
-                    <SiReact className="h-4 w-4" aria-hidden />
-                    <SiNodedotjs className="h-4 w-4" aria-hidden />
+      <header className="relative z-[2] overflow-x-clip border-b border-black/10 bg-white/95 backdrop-blur-xl">
+        <motion.div
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="relative"
+        >
+          <div className="nav-topbar-hud" aria-hidden>
+            <div className="nav-topbar-hud__grid" />
+            <div className="nav-topbar-hud__shine" />
+            <span className="nav-topbar-hud__corner nav-topbar-hud__corner--tl" />
+            <span className="nav-topbar-hud__corner nav-topbar-hud__corner--tr" />
+            <span className="nav-topbar-hud__corner nav-topbar-hud__corner--bl" />
+            <span className="nav-topbar-hud__corner nav-topbar-hud__corner--br" />
+          </div>
+          <div className="nav-holo" aria-hidden>
+            <div className="nav-holo__tunnel" />
+            <div className="nav-holo__sweep" />
+            <div className="nav-holo__noise" />
+            <div className="nav-holo__ticks" />
+            <div className="nav-holo__scans" />
+            <NavHoloShapes />
+          </div>
+          <Container>
+            <div className="relative z-[2] flex h-16 items-center sm:grid sm:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] sm:items-center">
+              <a
+                className="min-w-0 shrink-0 justify-self-start text-black sm:pr-2"
+                href="#top"
+                aria-label="Back to top"
+                onClick={handleNavClick("#top")}
+              >
+                <span className="inline-flex items-center gap-2.5 px-1 py-0.5">
+                  <span className="inline-flex flex-col items-center">
+                    <SiLaravel className="h-4 w-4" aria-hidden />
+                    <span className="mt-1 inline-flex items-center gap-2">
+                      <SiReact className="h-4 w-4" aria-hidden />
+                      <SiNodedotjs className="h-4 w-4" aria-hidden />
+                    </span>
+                  </span>
+                  <span className="inline text-[9px] font-bold uppercase tracking-[0.14em] text-black/85 sm:text-[11px] sm:tracking-[0.18em] [font-family:var(--font-orbitron)]">
+                    E Portfolio
                   </span>
                 </span>
-                <span className="inline text-[9px] font-bold uppercase tracking-[0.14em] text-black/85 sm:text-[11px] sm:tracking-[0.18em] [font-family:var(--font-orbitron)]">
-                  E Portfolio
-                </span>
-              </span>
-            </a>
+              </a>
 
-            <nav
-              className="hidden items-center justify-center gap-4 text-sm font-medium sm:col-start-2 sm:flex sm:gap-5"
-              aria-label="Primary"
-            >
-              {items.map(([label, href]) => (
-                <a
-                  key={href}
-                  href={href}
-                  onClick={handleNavClick(href)}
-                  className={cx("nav-link-holo", activeHref === href && "nav-link-holo--active")}
-                  aria-current={activeHref === href ? "page" : undefined}
-                >
-                  {label}
-                </a>
-              ))}
-            </nav>
+              <nav
+                className="hidden items-center justify-center gap-4 text-sm font-medium sm:col-start-2 sm:flex sm:gap-5"
+                aria-label="Primary"
+              >
+                {items.map(([label, href]) => (
+                  <a
+                    key={href}
+                    href={href}
+                    onClick={handleNavClick(href)}
+                    className={cx("nav-link-holo", activeHref === href && "nav-link-holo--active")}
+                    aria-current={activeHref === href ? "page" : undefined}
+                  >
+                    {label}
+                  </a>
+                ))}
+              </nav>
 
-            <button
-              type="button"
-              onClick={onToggleTheme}
-              aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
-              className="theme-toggle theme-toggle--switch hidden justify-self-end sm:inline-flex"
-            >
-              <span className="theme-toggle-switch__track" aria-hidden>
-                <span
-                  className={cx(
-                    "theme-toggle-switch__thumb",
-                    isDarkMode && "theme-toggle-switch__thumb--dark",
-                  )}
-                >
-                  {isDarkMode ? (
-                    <FiMoon className="size-3.5" aria-hidden />
-                  ) : (
-                    <FiSun className="size-3.5" aria-hidden />
-                  )}
-                </span>
-              </span>
-              <span className="sr-only">{isDarkMode ? "Light" : "Dark"}</span>
-            </button>
-
-            <button
-              type="button"
-              className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-md border border-black/20 bg-white text-black sm:hidden"
-              aria-label={mobileNavOpen ? "Close menu" : "Open menu"}
-              aria-expanded={mobileNavOpen}
-              aria-controls="mobile-sidebar-nav"
-              onClick={() => setMobileNavOpen((open) => !open)}
-            >
-              {mobileNavOpen ? <FiX className="h-5 w-5" aria-hidden /> : <FiMenu className="h-5 w-5" aria-hidden />}
-            </button>
-          </div>
-        </Container>
-
-        <div
-          className={cx(
-            "fixed inset-0 z-[60] bg-black/30 transition-opacity duration-300 sm:hidden",
-            mobileNavOpen ? "opacity-100 pointer-events-auto" : "pointer-events-none opacity-0"
-          )}
-          onClick={() => setMobileNavOpen(false)}
-          aria-hidden={!mobileNavOpen}
-        />
-
-        <aside
-          id="mobile-sidebar-nav"
-          className={cx(
-            "fixed left-0 top-0 z-[70] h-dvh w-[min(82vw,18rem)] border-r border-black/15 bg-white shadow-2xl transition-transform duration-300 ease-out sm:hidden",
-            mobileNavOpen ? "translate-x-0" : "-translate-x-full"
-          )}
-          aria-label="Mobile navigation"
-        >
-          <div className="flex h-16 items-center justify-between border-b border-black/10 px-4">
-            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-black/65">Navigation</span>
-            <div className="flex items-center gap-2">
               <button
                 type="button"
                 onClick={onToggleTheme}
                 aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
-                className="theme-toggle theme-toggle--switch theme-toggle--switch-sm inline-flex"
+                className="theme-toggle theme-toggle--switch hidden justify-self-end sm:inline-flex"
               >
                 <span className="theme-toggle-switch__track" aria-hidden>
                   <span
@@ -531,41 +476,102 @@ function HeaderNav({
                     )}
                   >
                     {isDarkMode ? (
-                      <FiMoon className="h-4 w-4" aria-hidden />
+                      <FiMoon className="size-3.5" aria-hidden />
                     ) : (
-                      <FiSun className="h-4 w-4" aria-hidden />
+                      <FiSun className="size-3.5" aria-hidden />
                     )}
                   </span>
                 </span>
+                <span className="sr-only">{isDarkMode ? "Light" : "Dark"}</span>
               </button>
+
               <button
                 type="button"
-                className="mobile-nav-close-btn inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/20 text-black"
-                aria-label="Close menu"
-                onClick={() => setMobileNavOpen(false)}
+                className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-md border border-black/20 bg-white text-black sm:hidden"
+                aria-label={mobileNavOpen ? "Close menu" : "Open menu"}
+                aria-expanded={mobileNavOpen}
+                aria-controls="mobile-sidebar-nav"
+                onClick={() => setMobileNavOpen((open) => !open)}
               >
-                <FiX className="mobile-nav-close-icon h-4 w-4 [stroke-width:2.7]" aria-hidden />
+                {mobileNavOpen ? (
+                  <FiX className="h-5 w-5" aria-hidden />
+                ) : (
+                  <FiMenu className="h-5 w-5" aria-hidden />
+                )}
               </button>
             </div>
+          </Container>
+        </motion.div>
+      </header>
+
+      <div
+        className={cx(
+          "fixed inset-0 z-[60] bg-black/30 transition-opacity duration-300 sm:hidden",
+          mobileNavOpen ? "opacity-100 pointer-events-auto" : "pointer-events-none opacity-0",
+        )}
+        onClick={() => setMobileNavOpen(false)}
+        aria-hidden={!mobileNavOpen}
+      />
+
+      <aside
+        id="mobile-sidebar-nav"
+        className={cx(
+          "fixed left-0 top-0 z-[70] h-screen w-[min(82vw,18rem)] border-r border-black/15 bg-white shadow-2xl transition-transform duration-300 ease-out sm:hidden",
+          mobileNavOpen ? "translate-x-0" : "-translate-x-full",
+        )}
+        aria-label="Mobile navigation"
+      >
+        <div className="flex h-16 items-center justify-between border-b border-black/10 px-4">
+          <span className="text-xs font-semibold uppercase tracking-[0.16em] text-black/65">Navigation</span>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={onToggleTheme}
+              aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+              className="theme-toggle theme-toggle--switch theme-toggle--switch-sm inline-flex"
+            >
+              <span className="theme-toggle-switch__track" aria-hidden>
+                <span
+                  className={cx(
+                    "theme-toggle-switch__thumb",
+                    isDarkMode && "theme-toggle-switch__thumb--dark",
+                  )}
+                >
+                  {isDarkMode ? (
+                    <FiMoon className="h-4 w-4" aria-hidden />
+                  ) : (
+                    <FiSun className="h-4 w-4" aria-hidden />
+                  )}
+                </span>
+              </span>
+            </button>
+            <button
+              type="button"
+              className="mobile-nav-close-btn inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/20 text-black"
+              aria-label="Close menu"
+              onClick={() => setMobileNavOpen(false)}
+            >
+              <FiX className="mobile-nav-close-icon h-4 w-4 [stroke-width:2.7]" aria-hidden />
+            </button>
           </div>
-          <nav className="flex flex-col px-3 py-3" aria-label="Sidebar">
-            {items.map(([label, href]) => (
-              <a
-                key={`mobile-${href}`}
-                href={href}
-                onClick={handleNavClick(href, true)}
-                className={cx(
-                  "rounded-md px-3 py-2.5 text-sm font-medium tracking-wide text-black/70 transition-colors hover:bg-black/[0.04] hover:text-black",
-                  activeHref === href && "bg-black text-white hover:bg-black hover:text-white"
-                )}
-                aria-current={activeHref === href ? "page" : undefined}
-              >
-                {label}
-              </a>
-            ))}
-          </nav>
-        </aside>
-      </motion.header>
+        </div>
+        <nav className="flex flex-col px-3 py-3" aria-label="Sidebar">
+          {items.map(([label, href]) => (
+            <a
+              key={`mobile-${href}`}
+              href={href}
+              onClick={handleNavClick(href, true)}
+              className={cx(
+                "rounded-md px-3 py-2.5 text-sm font-medium tracking-wide text-black/70 transition-colors hover:bg-black/[0.04] hover:text-black",
+                activeHref === href && "bg-black text-white hover:bg-black hover:text-white",
+              )}
+              aria-current={activeHref === href ? "page" : undefined}
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+      </aside>
 
       {/* Sci-fi HUD line: scan sweep + grid + pulsing nodes */}
       <div className="nav-sci-edge" aria-hidden>
@@ -824,27 +830,25 @@ export default function Home() {
   const [unlocked, setUnlocked] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
-  const [openMilestoneId, setOpenMilestoneId] = useState<string | null>("cert-0");
+  const [openMilestoneId, setOpenMilestoneId] = useState<string | null>(null);
   const links = portfolio.contact.socials;
   const projects = portfolio.projects;
   const primaryProject = projects[0];
   const activeProject = projects[activeProjectIndex];
   const milestoneItems = [
-    ...portfolio.achievements.map((title, i) => ({
+    ...portfolio.achievements.map((m, i) => ({
       id: `ach-${i}`,
       type: "Achievement",
-      title,
-      meta: "Performance Impact",
-      details:
-        "Operational improvement delivered through measurable execution and implementation quality.",
+      title: m.title,
+      meta: m.meta,
+      details: m.details,
     })),
-    ...portfolio.certifications.map((title, i) => ({
+    ...portfolio.certifications.map((m, i) => ({
       id: `cert-${i}`,
       type: "Certification",
-      title,
-      meta: "Validated Learning Path",
-      details:
-        "Credential focused on practical application, structured coursework, and verified technical competency.",
+      title: m.title,
+      meta: m.meta,
+      details: m.details,
     })),
   ];
 
