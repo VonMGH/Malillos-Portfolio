@@ -1092,7 +1092,7 @@ export default function Home() {
                           </a>
                           <a
                             className="overview-cta-secondary overview-mono group relative inline-flex h-12 min-w-[10rem] items-center justify-center overflow-hidden rounded-lg border-2 border-black bg-white px-6 text-[11px] font-bold uppercase tracking-[0.18em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
-                            href="/Malillos%20-%20CV.pdf"
+                            href="/Malillos-Von-Asley-CV.pdf"
                             download
                           >
                             <span
