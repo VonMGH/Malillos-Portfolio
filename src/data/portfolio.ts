@@ -65,7 +65,7 @@ export const portfolio: PortfolioData = {
       institution: "Laguna State Polytechnic University - San Pablo Campus",
       location: "San Pablo City, Laguna, Philippines",
       period: "2022 – 2026",
-      logoSrc: "/img/lspu1.png",
+      logoSrc: "/img/logo.png",
       details:
         "Specializing in the Service Management Program (IT-SMP), integrating full-stack web development, enterprise IT service delivery, business process management, and systems engineering.",
       highlights: [
