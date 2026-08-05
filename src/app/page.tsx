@@ -589,32 +589,32 @@ const PORTFOLIO_RAIN_LINES: readonly {
   duration: string;
   delay: string;
 }[] = [
-  { left: 2, top: 0, height: "100%", duration: "4.2s", delay: "-0.5s" },
-  { left: 7, top: 0, height: "100%", duration: "3.6s", delay: "-1.2s" },
-  { left: 13, top: 0, height: "100%", duration: "3.2s", delay: "-2.1s" },
-  { left: 19, top: 0, height: "100%", duration: "5s", delay: "-0.3s" },
-  { left: 25, top: 0, height: "100%", duration: "2.9s", delay: "-1.8s" },
-  { left: 31, top: 0, height: "100%", duration: "4.1s", delay: "-2.6s" },
-  { left: 37, top: 0, height: "100%", duration: "3.7s", delay: "-0.9s" },
-  { left: 43, top: 0, height: "100%", duration: "4.8s", delay: "-3.1s" },
-  { left: 49, top: 0, height: "100%", duration: "2.6s", delay: "-1.4s" },
-  { left: 55, top: 0, height: "100%", duration: "3.9s", delay: "-2.2s" },
-  { left: 61, top: 0, height: "100%", duration: "3.4s", delay: "-0.6s" },
-  { left: 67, top: 0, height: "100%", duration: "4.5s", delay: "-2.9s" },
-  { left: 73, top: 0, height: "100%", duration: "2.4s", delay: "-1.1s" },
-  { left: 79, top: 0, height: "100%", duration: "3.8s", delay: "-3.5s" },
-  { left: 85, top: 0, height: "100%", duration: "3s", delay: "-1.7s" },
-  { left: 91, top: 0, height: "100%", duration: "3.5s", delay: "-2.4s" },
-  { left: 97, top: 0, height: "100%", duration: "4.6s", delay: "-0.8s" },
-  { left: 5, top: 0, height: "100%", duration: "2.5s", delay: "-3.2s" },
-  { left: 16, top: 0, height: "100%", duration: "2.7s", delay: "-1.5s" },
-  { left: 28, top: 0, height: "100%", duration: "2.8s", delay: "-2.8s" },
-  { left: 40, top: 0, height: "100%", duration: "2.3s", delay: "-0.2s" },
-  { left: 52, top: 0, height: "100%", duration: "3.3s", delay: "-1.9s" },
-  { left: 64, top: 0, height: "100%", duration: "4.3s", delay: "-2.7s" },
-  { left: 76, top: 0, height: "100%", duration: "3.1s", delay: "-0.4s" },
-  { left: 88, top: 0, height: "100%", duration: "3.6s", delay: "-3s" },
-];
+    { left: 2, top: 0, height: "100%", duration: "4.2s", delay: "-0.5s" },
+    { left: 7, top: 0, height: "100%", duration: "3.6s", delay: "-1.2s" },
+    { left: 13, top: 0, height: "100%", duration: "3.2s", delay: "-2.1s" },
+    { left: 19, top: 0, height: "100%", duration: "5s", delay: "-0.3s" },
+    { left: 25, top: 0, height: "100%", duration: "2.9s", delay: "-1.8s" },
+    { left: 31, top: 0, height: "100%", duration: "4.1s", delay: "-2.6s" },
+    { left: 37, top: 0, height: "100%", duration: "3.7s", delay: "-0.9s" },
+    { left: 43, top: 0, height: "100%", duration: "4.8s", delay: "-3.1s" },
+    { left: 49, top: 0, height: "100%", duration: "2.6s", delay: "-1.4s" },
+    { left: 55, top: 0, height: "100%", duration: "3.9s", delay: "-2.2s" },
+    { left: 61, top: 0, height: "100%", duration: "3.4s", delay: "-0.6s" },
+    { left: 67, top: 0, height: "100%", duration: "4.5s", delay: "-2.9s" },
+    { left: 73, top: 0, height: "100%", duration: "2.4s", delay: "-1.1s" },
+    { left: 79, top: 0, height: "100%", duration: "3.8s", delay: "-3.5s" },
+    { left: 85, top: 0, height: "100%", duration: "3s", delay: "-1.7s" },
+    { left: 91, top: 0, height: "100%", duration: "3.5s", delay: "-2.4s" },
+    { left: 97, top: 0, height: "100%", duration: "4.6s", delay: "-0.8s" },
+    { left: 5, top: 0, height: "100%", duration: "2.5s", delay: "-3.2s" },
+    { left: 16, top: 0, height: "100%", duration: "2.7s", delay: "-1.5s" },
+    { left: 28, top: 0, height: "100%", duration: "2.8s", delay: "-2.8s" },
+    { left: 40, top: 0, height: "100%", duration: "2.3s", delay: "-0.2s" },
+    { left: 52, top: 0, height: "100%", duration: "3.3s", delay: "-1.9s" },
+    { left: 64, top: 0, height: "100%", duration: "4.3s", delay: "-2.7s" },
+    { left: 76, top: 0, height: "100%", duration: "3.1s", delay: "-0.4s" },
+    { left: 88, top: 0, height: "100%", duration: "3.6s", delay: "-3s" },
+  ];
 
 function HeaderNav({
   isDarkMode,
@@ -894,9 +894,9 @@ function HeaderNav({
               className={cx(
                 "rounded-md px-3 py-2.5 text-sm font-medium tracking-wide text-black/70 transition-colors hover:bg-black/[0.04] hover:text-black",
                 activeHref === href &&
-                  (isDarkMode
-                    ? "mobile-sidebar-link-active-dark"
-                    : "mobile-sidebar-link-active-light"),
+                (isDarkMode
+                  ? "mobile-sidebar-link-active-dark"
+                  : "mobile-sidebar-link-active-light"),
               )}
               aria-current={activeHref === href ? "page" : undefined}
             >
@@ -1044,7 +1044,7 @@ function InfiltrationHero({ show, onProceed }: { show: boolean; onProceed: () =>
   if (!show && mounted) return null;
 
   return (
-    <motion.div 
+    <motion.div
       initial="hidden"
       animate={show ? "visible" : "hidden"}
       variants={containerVars}
@@ -1061,7 +1061,7 @@ function InfiltrationHero({ show, onProceed }: { show: boolean; onProceed: () =>
       <motion.div variants={lineVars} className="hero-scanline-v left-[65%] h-[60vh] top-[10%] origin-top" style={{ animationDelay: "-2.1s" }} />
       <motion.div variants={lineVars} className="hero-scanline-v left-[85%] h-[30vh] top-[60%] origin-top" style={{ animationDelay: "-0.8s" }} />
       <motion.div variants={lineVars} className="hero-scanline-v left-[92%] h-[80vh] top-[0%] origin-top" style={{ animationDelay: "-1.7s" }} />
-      
+
       <div className="relative z-10 flex flex-col items-center gap-8">
         <motion.div variants={itemVars} className="flex flex-col items-center gap-2">
           <div className="h-px w-24 bg-black/20 intro-line-expand" />
@@ -1108,7 +1108,7 @@ function InfiltrationHero({ show, onProceed }: { show: boolean; onProceed: () =>
             {statusText.slice(0, typedCount)}
             <span aria-hidden className="hero-typing-cursor">|</span>
           </p>
-          
+
           <div className="flex items-center gap-4">
             <div className="h-2 w-2 rounded-full bg-black animate-ping" />
             <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-black/40">
@@ -1243,9 +1243,9 @@ export default function Home() {
 
   return (
     <div id="top" className="flex flex-1 flex-col">
-      <IntroOverlay 
-        title="Welcome to My Portfolio" 
-        onComplete={() => setIntroFinished(true)} 
+      <IntroOverlay
+        title="Welcome to My Portfolio"
+        onComplete={() => setIntroFinished(true)}
       />
       <div
         data-theme-swap={isDarkMode ? "dark" : "light"}
@@ -1264,879 +1264,879 @@ export default function Home() {
           >
             <HeaderNav isDarkMode={isDarkMode} onToggleTheme={() => setIsDarkMode((prev) => !prev)} />
             <main className="relative isolate flex-1">
-            <div
-              className="portfolio-rain-layer pointer-events-none absolute inset-0 z-0"
-              aria-hidden
-            >
-              {PORTFOLIO_RAIN_LINES.map((line, i) => (
-                <span
-                  key={i}
-                  className="channel-rain-line"
-                  style={
-                    {
-                      left: `${line.left}%`,
-                      top: `${line.top}%`,
-                      height: line.height,
-                      "--channel-rain-dur": line.duration,
-                      "--channel-rain-delay": line.delay,
-                    } as CSSProperties
-                  }
-                />
-              ))}
-            </div>
-            <div className="relative z-[1]">
-            <div className="relative overflow-visible border-b border-black/5">
-              <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(60%_60%_at_50%_0%,rgba(0,0,0,0.03),transparent)]" />
-              <Container>
-                <section
-                  id="overview"
-                  className={`overview-hero relative scroll-mt-24 overflow-visible py-12 sm:py-16 lg:py-20 ${orbitron.variable} ${jetbrainsMono.variable}`}
-                >
-                  <div className="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_24px_80px_-24px_rgba(0,0,0,0.12)]">
-                    <div className="grid grid-cols-1 lg:grid-cols-12">
-                      {/* Photo — fixed column, centered */}
-                      <div className="flex items-center justify-center border-b border-black/10 bg-gradient-to-b from-black/[0.03] to-transparent px-6 py-10 lg:col-span-3 lg:border-b-0 lg:border-r lg:px-4 lg:py-12">
-                        <div className="overview-avatar-frame relative flex size-[184px] shrink-0 items-center justify-center sm:size-[208px]">
-                          <span
-                            className="pointer-events-none absolute inset-0 rounded-full border-2 border-black/[0.08]"
-                            aria-hidden
-                          />
-                          <span
-                            className="overview-avatar-loader pointer-events-none absolute inset-0 rounded-full border-2 border-transparent border-t-black border-r-black/30"
-                            aria-hidden
-                          />
-                          <div className="overview-profile-ring relative z-[1]">
-                            <Image
-                              src={isDarkMode ? "/darkmodeprof.png" : "/Profile.jpg"}
-                              alt={portfolio.fullName}
-                              width={160}
-                              height={160}
-                              priority
-                              className={cx(
-                                "size-40 rounded-full object-cover",
-                                isDarkMode
-                                  ? "origin-center scale-[1.22] object-[center_22%]"
-                                  : "object-top"
-                              )}
-                              sizes="160px"
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Identity + bio + CTAs */}
-                      <div className="flex flex-col gap-7 border-b border-black/10 px-6 py-10 text-center lg:col-span-6 lg:border-b-0 lg:border-r lg:px-10 lg:py-12 lg:text-left">
-                        <p className="overview-mono text-[10px] font-semibold uppercase tracking-[0.4em] text-black/45">
-                          Operator profile
-                        </p>
-
-                        <div className="flex flex-wrap items-center justify-center gap-2 lg:justify-start">
-                          <Pill>
-                            <span className="overview-mono text-[11px] font-semibold tracking-[0.14em] uppercase">
-                              {portfolio.professionalTitle}
-                            </span>
-                          </Pill>
-                          {portfolio.contact.location ? (
-                            <Pill>
-                              <span className="overview-mono text-[11px] font-semibold tracking-[0.14em] uppercase">
-                                {portfolio.contact.location}
-                              </span>
-                            </Pill>
-                          ) : null}
-                        </div>
-
-                        <div className="overview-name-wrap mx-auto max-w-full lg:mx-0">
-                          <h1 className="relative text-balance text-3xl font-bold uppercase leading-[1.12] tracking-[0.03em] text-black sm:text-4xl lg:text-[2.35rem] lg:leading-[1.08]">
-                            <span className="overview-name-scanline" aria-hidden />
-                            <span className="relative z-[1]">{portfolio.fullName}</span>
-                          </h1>
-                        </div>
-
-                        {primaryProject ? (
-                          <p className="overview-mono mx-auto max-w-xl text-[0.9375rem] font-medium leading-[1.7] text-black/70 lg:mx-0 lg:max-w-2xl lg:text-base lg:font-semibold">
-                            {primaryProject.description}
-                          </p>
-                        ) : null}
-
-                        <div className="flex flex-col items-stretch gap-3 pt-1 sm:flex-row sm:justify-center lg:justify-start">
-                          <a
-                            className="overview-cta-primary overview-mono group relative inline-flex h-12 min-w-[10rem] items-center justify-center overflow-hidden rounded-lg bg-black px-6 text-[11px] font-bold uppercase tracking-[0.18em] text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
-                            href="#contact"
-                            onClick={handleSmoothSectionJump("#contact")}
-                          >
-                            <span
-                              className="overview-cta-primary-fill pointer-events-none absolute inset-y-0 left-0 w-14 origin-left -translate-x-px -skew-x-[14deg] bg-white transition-all duration-500 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:w-full group-hover:translate-x-0 group-hover:-skew-x-0"
-                              aria-hidden
-                            />
-                            <span className="overview-cta-hud-grid pointer-events-none absolute inset-0" aria-hidden />
-                            <span className="overview-cta-hud-sweep pointer-events-none absolute inset-y-0 -left-1/2 w-1/2" aria-hidden />
-                            <span className="cta-invert-label relative z-10">
-                              CONTACT_SYSTEM
-                            </span>
-                          </a>
-                          <a
-                            className="overview-cta-secondary overview-mono group relative inline-flex h-12 min-w-[10rem] items-center justify-center overflow-hidden rounded-lg border-2 border-black bg-white px-6 text-[11px] font-bold uppercase tracking-[0.18em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
-                            href="#project"
-                            onClick={handleSmoothSectionJump("#project")}
-                          >
-                            <span
-                              className="overview-cta-secondary-fill pointer-events-none absolute inset-y-0 left-0 w-14 origin-left -translate-x-px -skew-x-[14deg] bg-black transition-all duration-500 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:w-full group-hover:translate-x-0 group-hover:-skew-x-0"
-                              aria-hidden
-                            />
-                            <span className="overview-cta-hud-grid pointer-events-none absolute inset-0" aria-hidden />
-                            <span className="overview-cta-hud-sweep pointer-events-none absolute inset-y-0 -left-1/2 w-1/2" aria-hidden />
-                            <span className="cta-invert-label relative z-10">
-                              VIEW_PROJECTS
-                            </span>
-                          </a>
-                          <a
-                            className="overview-cta-secondary overview-mono group relative inline-flex h-12 min-w-[10rem] items-center justify-center overflow-hidden rounded-lg border-2 border-black bg-white px-6 text-[11px] font-bold uppercase tracking-[0.18em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
-                            href="/Malillos-Von-Asley-CV.pdf"
-                            download
-                          >
-                            <span
-                              className="overview-cta-secondary-fill pointer-events-none absolute inset-y-0 left-0 w-14 origin-left -translate-x-px -skew-x-[14deg] bg-black transition-all duration-500 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:w-full group-hover:translate-x-0 group-hover:-skew-x-0"
-                              aria-hidden
-                            />
-                            <span className="overview-cta-hud-grid pointer-events-none absolute inset-0" aria-hidden />
-                            <span className="overview-cta-hud-sweep pointer-events-none absolute inset-y-0 -left-1/2 w-1/2" aria-hidden />
-                            <span className="cta-invert-label relative z-10">
-                              DOWNLOAD_CV
-                            </span>
-                          </a>
-                        </div>
-                      </div>
-
-                      {/* Contact — compact stack + sci-fi HUD in margins only */}
-                      <div className="channel-registry-col relative flex min-h-[280px] flex-col justify-center overflow-hidden px-6 py-10 lg:col-span-3 lg:min-h-[min(100%,360px)] lg:px-8 lg:py-12">
-                        <div className="channel-registry-hud pointer-events-none absolute inset-0 z-0" aria-hidden>
-                          <span className="channel-hud-grid" />
-                          <span className="channel-hud-scan" />
-                          <span className="channel-hud-radar" />
-                          <span className="channel-hud-waves" />
-                          <span className="channel-hud-node channel-hud-node--tr" />
-                          <span className="channel-hud-node channel-hud-node--bl" />
-                        </div>
-                        <div className="relative z-10 flex flex-col gap-5">
-                          <p className="overview-mono bg-white text-center text-[10px] font-medium uppercase tracking-[0.35em] text-black/40 lg:text-left">
-                            Channel registry
-                          </p>
-                          <div className="flex flex-col divide-y divide-black/[0.08] rounded-xl border border-black/10 bg-white shadow-sm">
-                          <div className="px-4 py-4">
-                            <p className="overview-mono mb-1.5 text-[9px] font-semibold uppercase tracking-[0.28em] text-black/40">
-                              Email
-                            </p>
-                            <a
-                              className="overview-mono break-all text-sm font-medium text-black underline-offset-2 hover:underline"
-                              href={`mailto:${portfolio.contact.email}`}
-                            >
-                              {portfolio.contact.email}
-                            </a>
-                          </div>
-
-                          {portfolio.contact.phone ? (
-                            <div className="px-4 py-4">
-                              <p className="overview-mono mb-1.5 text-[9px] font-semibold uppercase tracking-[0.28em] text-black/40">
-                                Phone
-                              </p>
-                              <a
-                                className="overview-mono text-sm font-medium text-black underline-offset-2 hover:underline"
-                                href={`tel:${portfolio.contact.phone}`}
-                              >
-                                {portfolio.contact.phone}
-                              </a>
-                            </div>
-                          ) : null}
-
-                          {links.length ? (
-                            <div className="px-4 py-4">
-                              <p className="overview-mono mb-2 text-[9px] font-semibold uppercase tracking-[0.28em] text-black/40">
-                                Links
-                              </p>
-                              <div className="flex flex-wrap gap-x-4 gap-y-2">
-                                {links.map((s: any) => (
-                                  <a
-                                    key={s.label}
-                                    className="overview-mono text-sm font-medium text-black underline-offset-2 hover:underline"
-                                    href={s.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                  >
-                                    {s.label}
-                                  </a>
-                                ))}
-                              </div>
-                            </div>
-                          ) : null}
-                        </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </Container>
-            </div>
-
-            <Container>
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.2 }}
-                variants={inquiryRevealGroup}
+              <div
+                className="portfolio-rain-layer pointer-events-none absolute inset-0 z-0"
+                aria-hidden
               >
-                <Section
-                  id="education"
-                  className={cx(orbitron.variable, "section-heading-orbitron")}
-                  heading={{
-                    eyebrow: "Academic Pathway",
-                    title: "Education & Specialization",
-                    subtitle:
-                      "Institutional degree and Service Management Program (IT-SMP) major.",
-                  }}
-                >
-                  <motion.div variants={scrollRevealGroup} className="grid gap-6">
-                    {portfolio.education.map((edu, idx) => (
-                      <motion.div key={idx} variants={scrollRevealItem}>
-                        <Card className="group relative overflow-hidden border-2 border-black/10 bg-white p-6 lg:p-8 shadow-sm">
-                          {/* Half of the Logo as Background on Mobile / Desktop Right */}
-                          {edu.logoSrc && (
-                            <div className="absolute inset-y-0 right-0 left-0 sm:left-auto sm:w-1/2 pointer-events-none overflow-hidden z-0 flex items-center justify-center sm:justify-end opacity-65 sm:opacity-95 transition-all duration-300">
-                              <div className="relative h-[85%] w-[85%] sm:h-[120%] sm:w-[120%] sm:translate-x-1/6 transition-transform duration-500 group-hover:scale-105">
+                {PORTFOLIO_RAIN_LINES.map((line, i) => (
+                  <span
+                    key={i}
+                    className="channel-rain-line"
+                    style={
+                      {
+                        left: `${line.left}%`,
+                        top: `${line.top}%`,
+                        height: line.height,
+                        "--channel-rain-dur": line.duration,
+                        "--channel-rain-delay": line.delay,
+                      } as CSSProperties
+                    }
+                  />
+                ))}
+              </div>
+              <div className="relative z-[1]">
+                <div className="relative overflow-visible border-b border-black/5">
+                  <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(60%_60%_at_50%_0%,rgba(0,0,0,0.03),transparent)]" />
+                  <Container>
+                    <section
+                      id="overview"
+                      className={`overview-hero relative scroll-mt-24 overflow-visible py-12 sm:py-16 lg:py-20 ${orbitron.variable} ${jetbrainsMono.variable}`}
+                    >
+                      <div className="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_24px_80px_-24px_rgba(0,0,0,0.12)]">
+                        <div className="grid grid-cols-1 lg:grid-cols-12">
+                          {/* Photo — fixed column, centered */}
+                          <div className="flex items-center justify-center border-b border-black/10 bg-gradient-to-b from-black/[0.03] to-transparent px-6 py-10 lg:col-span-3 lg:border-b-0 lg:border-r lg:px-4 lg:py-12">
+                            <div className="overview-avatar-frame relative flex size-[184px] shrink-0 items-center justify-center sm:size-[208px]">
+                              <span
+                                className="pointer-events-none absolute inset-0 rounded-full border-2 border-black/[0.08]"
+                                aria-hidden
+                              />
+                              <span
+                                className="overview-avatar-loader pointer-events-none absolute inset-0 rounded-full border-2 border-transparent border-t-black border-r-black/30"
+                                aria-hidden
+                              />
+                              <div className="overview-profile-ring relative z-[1]">
                                 <Image
-                                  src={edu.logoSrc}
-                                  alt=""
-                                  fill
-                                  className="object-contain object-center sm:object-right"
+                                  src={isDarkMode ? "/darkmodeprof.png" : "/Profile.jpg"}
+                                  alt={portfolio.fullName}
+                                  width={160}
+                                  height={160}
                                   priority
+                                  className={cx(
+                                    "size-40 rounded-full object-cover",
+                                    isDarkMode
+                                      ? "origin-center scale-[1.22] object-[center_22%]"
+                                      : "object-top"
+                                  )}
+                                  sizes="160px"
                                 />
                               </div>
-                              {/* Soft gradient edge transition matching current theme */}
-                              <div className="education-logo-overlay absolute inset-0 bg-gradient-to-b sm:bg-gradient-to-r from-white/40 via-white/60 to-transparent" />
                             </div>
-                          )}
+                          </div>
 
-                          {/* Content Container (z-10) */}
-                          <div className="relative z-10 space-y-6">
-                            {/* Top Status & Meta Header */}
-                            <div className="flex flex-wrap items-center justify-center sm:justify-between gap-3 border-b border-black/10 pb-4">
-                              <div className="flex items-center gap-2">
-                                <span className="inline-flex items-center gap-1.5 rounded-full border border-black/15 bg-black/5 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-black">
-                                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                                  {edu.period}
+                          {/* Identity + bio + CTAs */}
+                          <div className="flex flex-col gap-7 border-b border-black/10 px-6 py-10 text-center lg:col-span-6 lg:border-b-0 lg:border-r lg:px-10 lg:py-12 lg:text-left">
+                            <p className="overview-mono text-[10px] font-semibold uppercase tracking-[0.4em] text-black/45">
+                              Operator profile
+                            </p>
+
+                            <div className="flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+                              <Pill>
+                                <span className="overview-mono text-[11px] font-semibold tracking-[0.14em] uppercase">
+                                  {portfolio.professionalTitle}
                                 </span>
-                                <span className="rounded-full border border-black/10 bg-black/5 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.2em] text-black/70">
-                                  Degree Spec
-                                </span>
-                              </div>
+                              </Pill>
+                              {portfolio.contact.location ? (
+                                <Pill>
+                                  <span className="overview-mono text-[11px] font-semibold tracking-[0.14em] uppercase">
+                                    {portfolio.contact.location}
+                                  </span>
+                                </Pill>
+                              ) : null}
                             </div>
 
-                            {/* Main Title & Major Banner */}
-                            <div className="space-y-3 flex flex-col items-center sm:items-start text-center sm:text-left">
-                              <h3 className="text-2xl lg:text-3xl font-black tracking-tight text-black">
-                                {edu.degree}
-                              </h3>
+                            <div className="overview-name-wrap mx-auto max-w-full lg:mx-0">
+                              <h1 className="relative text-balance text-3xl font-bold uppercase leading-[1.12] tracking-[0.03em] text-black sm:text-4xl lg:text-[2.35rem] lg:leading-[1.08]">
+                                <span className="overview-name-scanline" aria-hidden />
+                                <span className="relative z-[1]">{portfolio.fullName}</span>
+                              </h1>
+                            </div>
 
-                              <div className="inline-flex flex-wrap items-center justify-center sm:justify-start gap-2 rounded-xl border border-black/20 bg-black/5 px-4 py-2 text-xs font-bold uppercase tracking-widest text-black shadow-xs">
-                                <FiAward className="size-4 shrink-0 text-black" />
-                                <span>Major in Service Management Program (IT-SMP)</span>
-                              </div>
-
-                              <p className="flex items-center justify-center sm:justify-start gap-2 text-sm font-bold tracking-wide text-black/80">
-                                {edu.logoSrc ? (
-                                  <Image src={edu.logoSrc} alt={edu.institution} width={22} height={22} className="size-5.5 object-contain shrink-0" />
-                                ) : (
-                                  <FiBookOpen className="size-4 shrink-0 text-black/50" />
-                                )}
-                                <span>{edu.institution}</span>
+                            {primaryProject ? (
+                              <p className="overview-mono mx-auto max-w-xl text-[0.9375rem] font-medium leading-[1.7] text-black/70 lg:mx-0 lg:max-w-2xl lg:text-base lg:font-semibold">
+                                {primaryProject.description}
                               </p>
-                            </div>
+                            ) : null}
 
-                            {/* Divider */}
-                            <div className="my-6 border-t border-dashed border-black/15" />
-
-                            {/* Overview & Key Highlights Grid */}
-                            <div className="grid gap-6 lg:grid-cols-[1fr_1.1fr]">
-                              <div className="space-y-4 border-l-0 sm:border-l-2 border-black/80 pl-0 sm:pl-4 py-1 flex flex-col justify-between items-center sm:items-start text-center sm:text-left">
-                                <div className="space-y-3">
-                                  <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-black/40">
-                                    Program Overview
-                                  </p>
-                                  {edu.details && (
-                                    <p className="text-sm leading-relaxed font-medium text-black/75">
-                                      {edu.details}
-                                    </p>
-                                  )}
-                                </div>
-
-                                {edu.location && (
-                                  <div className="mt-4 w-full rounded-xl border border-black/15 bg-black/5 p-3.5 flex items-center justify-center sm:justify-start gap-3 shadow-xs text-black transition-all hover:border-black/40 hover:bg-black/10">
-                                    <div className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-black/15 bg-black/5 text-black">
-                                      <FiMapPin className="size-5" />
-                                    </div>
-                                    <div className="text-left">
-                                      <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-black/40">
-                                        Campus Location
-                                      </p>
-                                      <p className="text-sm font-black tracking-tight text-black">
-                                        {edu.location}
-                                      </p>
-                                    </div>
-                                  </div>
-                                )}
-                              </div>
-
-                              {edu.highlights && edu.highlights.length > 0 && (
-                                <div className="space-y-3">
-                                  <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-black/40">
-                                    Core Program Competencies
-                                  </p>
-                                  <div className="grid gap-2.5">
-                                    {edu.highlights.map((h, hIdx) => (
-                                      <div
-                                        key={hIdx}
-                                        className="group/item flex items-start gap-3 rounded-xl border border-black/10 bg-black/5 p-3 text-black shadow-xs transition-all hover:border-black/40 hover:bg-black/10"
-                                      >
-                                        <span className="flex size-6 shrink-0 items-center justify-center rounded-lg border border-black/15 bg-black/10 text-[10px] font-bold text-black group-hover/item:bg-black group-hover/item:text-white transition-colors">
-                                          0{hIdx + 1}
-                                        </span>
-                                        <span className="text-xs font-semibold leading-snug text-black/85">
-                                          {h}
-                                        </span>
-                                      </div>
-                                    ))}
-                                  </div>
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                        </Card>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                </Section>
-              </motion.div>
-
-              <div className="section-sci-divider" aria-hidden>
-                <span className="section-sci-divider__core" />
-                <span className="section-sci-divider__scan" />
-                <span className="section-sci-divider__scan section-sci-divider__scan--echo" />
-              </div>
-
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.2 }}
-                variants={scrollRevealGroup}
-              >
-                <Section
-                  id="skills"
-                  className={cx(orbitron.variable, "section-heading-orbitron")}
-                  heading={{
-                    eyebrow: "Capability",
-                    title: "Technical Stack",
-                    subtitle: "Core technologies, databases, and specialized developer tools.",
-                  }}
-                >
-                  <motion.div variants={scrollRevealGroup} className="grid gap-6 md:grid-cols-3">
-                    {/* Card 1: Frontend & UI */}
-                    <motion.div variants={scrollRevealItem} className="rounded-2xl border border-black/10 bg-gradient-to-b from-black/[0.02] to-transparent p-5">
-                      <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-black/40">
-                        Frontend & UI
-                      </h3>
-                      <div className="grid grid-cols-1 gap-2">
-                        {["HTML", "CSS", "TypeScript", "React", "Next.js", "Tailwind CSS"].map((skill) => (
-                          <SkillChip key={skill} label={skill} iconMap={TECH_ICON_MAP} />
-                        ))}
-                      </div>
-                    </motion.div>
-
-                    {/* Card 2: Backend & Databases */}
-                    <motion.div variants={scrollRevealItem} className="rounded-2xl border border-black/10 bg-gradient-to-b from-black/[0.02] to-transparent p-5">
-                      <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-black/40">
-                        Backend & Databases
-                      </h3>
-                      <div className="grid grid-cols-1 gap-2">
-                        {["PHP", "Node.js", "REST APIs", "MySQL", "Supabase", "Prisma"].map((skill) => (
-                          <SkillChip key={skill} label={skill} iconMap={TECH_ICON_MAP} />
-                        ))}
-                      </div>
-                    </motion.div>
-
-                    {/* Card 3: Developer Tools */}
-                    <motion.div variants={scrollRevealItem} className="rounded-2xl border border-black/10 bg-gradient-to-b from-black/[0.02] to-transparent p-5">
-                      <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-black/40">
-                        Developer Tools
-                      </h3>
-                      <div className="grid grid-cols-1 gap-2">
-                        {portfolio.tools.map((tool) => (
-                          <SkillChip key={tool} label={tool} iconMap={TOOL_ICON_MAP} />
-                        ))}
-                      </div>
-                    </motion.div>
-                  </motion.div>
-
-                  <motion.div variants={scrollRevealItem}>
-                    <SkillsMarqueeCarousel items={[...portfolio.technicalSkills, ...portfolio.tools]} />
-                  </motion.div>
-                </Section>
-              </motion.div>
-
-              <div className="section-sci-divider" aria-hidden>
-                <span className="section-sci-divider__core" />
-                <span className="section-sci-divider__scan" />
-                <span className="section-sci-divider__scan section-sci-divider__scan--echo" />
-              </div>
-
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.15 }}
-                variants={projectRevealGroup}
-              >
-                <Section
-                  id="project"
-                  className={cx(orbitron.variable, "section-heading-orbitron")}
-                  heading={{
-                    eyebrow: "Featured Work",
-                    title: "Project Archive",
-                    subtitle: "Selected full-stack systems, application platforms, and software architecture.",
-                  }}
-                >
-                  {activeProject ? (
-                    <motion.div variants={projectRevealGroup} className="space-y-8">
-                      {/* Sci-Fi Project Selector Deck Bar */}
-                      <motion.div variants={projectRevealItem} className="flex flex-col gap-4">
-                        <div className="flex flex-wrap items-center justify-between gap-3">
-                          <p className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-black/40">
-                            Select System Case ({activeProjectIndex + 1} / {projects.length})
-                          </p>
-
-                          <div className="flex items-center gap-2">
-                            <button
-                              type="button"
-                              onClick={() =>
-                                setActiveProjectIndex((prev) =>
-                                  (prev - 1 + projects.length) % projects.length,
-                                )
-                              }
-                              className="inline-flex items-center gap-1.5 rounded-xl border border-black/15 bg-white px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-black transition-all hover:bg-black hover:text-white shadow-xs"
-                            >
-                              ← Prev
-                            </button>
-                            <button
-                              type="button"
-                              onClick={() =>
-                                setActiveProjectIndex((prev) => (prev + 1) % projects.length)
-                              }
-                              className="inline-flex items-center gap-1.5 rounded-xl border border-black/15 bg-white px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-black transition-all hover:bg-black hover:text-white shadow-xs"
-                            >
-                              Next →
-                            </button>
-                          </div>
-                        </div>
-
-                        {/* Interactive Case Tabs */}
-                        <div className="flex overflow-x-auto pb-2 scrollbar-none gap-2">
-                          {projects.map((project, i) => {
-                            const isActive = i === activeProjectIndex;
-                            return (
-                              <button
-                                key={project.name}
-                                type="button"
-                                onClick={() => setActiveProjectIndex(i)}
-                                className={cx(
-                                  "group relative flex shrink-0 items-center gap-2.5 rounded-xl border px-4 py-2.5 text-left text-xs font-bold transition-transform duration-200 shadow-xs",
-                                  isActive
-                                    ? isDarkMode
-                                      ? "case-tab-active border-white !bg-white !text-black shadow-md scale-[1.02]"
-                                      : "case-tab-active border-black bg-black text-white shadow-md scale-[1.02]"
-                                    : isDarkMode
-                                      ? "border-white/20 bg-white/10 text-white/70 hover:border-white/40 hover:bg-white/15"
-                                      : "border-black/10 bg-white text-black/70 hover:border-black/40 hover:bg-black/5"
-                                )}
+                            <div className="flex flex-col items-stretch gap-3 pt-1 sm:flex-row sm:justify-center lg:justify-start">
+                              <a
+                                className="overview-cta-primary overview-mono group relative inline-flex h-12 min-w-[10rem] items-center justify-center overflow-hidden rounded-lg bg-black px-6 text-[11px] font-bold uppercase tracking-[0.18em] text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+                                href="#contact"
+                                onClick={handleSmoothSectionJump("#contact")}
                               >
                                 <span
-                                  className={cx(
-                                    "case-tab-num flex size-5 shrink-0 items-center justify-center rounded-md text-[10px] font-extrabold transition-colors",
-                                    isActive
-                                      ? isDarkMode
-                                        ? "!bg-black/15 !text-black"
-                                        : "bg-white/20 text-white"
-                                      : isDarkMode
-                                        ? "bg-white/15 text-white/80 group-hover:bg-white/25"
-                                        : "bg-black/5 text-black/60 group-hover:bg-black/10"
-                                  )}
-                                >
-                                  0{i + 1}
+                                  className="overview-cta-primary-fill pointer-events-none absolute inset-y-0 left-0 w-14 origin-left -translate-x-px -skew-x-[14deg] bg-white transition-all duration-500 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:w-full group-hover:translate-x-0 group-hover:-skew-x-0"
+                                  aria-hidden
+                                />
+                                <span className="overview-cta-hud-grid pointer-events-none absolute inset-0" aria-hidden />
+                                <span className="overview-cta-hud-sweep pointer-events-none absolute inset-y-0 -left-1/2 w-1/2" aria-hidden />
+                                <span className="cta-invert-label relative z-10">
+                                  CONTACT_SYSTEM
                                 </span>
-                                <span className="truncate max-w-[150px] sm:max-w-[200px]">
-                                  {project.name}
+                              </a>
+                              <a
+                                className="overview-cta-secondary overview-mono group relative inline-flex h-12 min-w-[10rem] items-center justify-center overflow-hidden rounded-lg border-2 border-black bg-white px-6 text-[11px] font-bold uppercase tracking-[0.18em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+                                href="#project"
+                                onClick={handleSmoothSectionJump("#project")}
+                              >
+                                <span
+                                  className="overview-cta-secondary-fill pointer-events-none absolute inset-y-0 left-0 w-14 origin-left -translate-x-px -skew-x-[14deg] bg-black transition-all duration-500 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:w-full group-hover:translate-x-0 group-hover:-skew-x-0"
+                                  aria-hidden
+                                />
+                                <span className="overview-cta-hud-grid pointer-events-none absolute inset-0" aria-hidden />
+                                <span className="overview-cta-hud-sweep pointer-events-none absolute inset-y-0 -left-1/2 w-1/2" aria-hidden />
+                                <span className="cta-invert-label relative z-10">
+                                  VIEW_PROJECTS
                                 </span>
-                              </button>
-                            );
-                          })}
-                        </div>
-                      </motion.div>
+                              </a>
+                              <a
+                                className="overview-cta-secondary overview-mono group relative inline-flex h-12 min-w-[10rem] items-center justify-center overflow-hidden rounded-lg border-2 border-black bg-white px-6 text-[11px] font-bold uppercase tracking-[0.18em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+                                href="/Malillos-Von-Asley-CV.pdf"
+                                download
+                              >
+                                <span
+                                  className="overview-cta-secondary-fill pointer-events-none absolute inset-y-0 left-0 w-14 origin-left -translate-x-px -skew-x-[14deg] bg-black transition-all duration-500 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:w-full group-hover:translate-x-0 group-hover:-skew-x-0"
+                                  aria-hidden
+                                />
+                                <span className="overview-cta-hud-grid pointer-events-none absolute inset-0" aria-hidden />
+                                <span className="overview-cta-hud-sweep pointer-events-none absolute inset-y-0 -left-1/2 w-1/2" aria-hidden />
+                                <span className="cta-invert-label relative z-10">
+                                  DOWNLOAD_CV
+                                </span>
+                              </a>
+                            </div>
+                          </div>
 
-                      {/* Main Showcase Card */}
-                      <motion.div
-                        key={`${activeProject.name}-${activeProjectIndex}`}
-                        variants={projectRevealItem}
-                        initial={{ opacity: 0, y: 16, filter: "blur(4px)" }}
-                        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                      >
-                        <Card className="group relative overflow-hidden border-2 border-black/10 bg-white p-6 lg:p-8 hover:border-black/80 hover:shadow-[0_24px_70px_-30px_rgba(0,0,0,0.24)]">
-                          <div className="grid gap-8 lg:grid-cols-12 items-start">
-                            {/* Left Column: Visual System Preview & Quick Select Deck */}
-                            <div className="space-y-6 lg:col-span-6">
-                              {/* Hero Preview Frame */}
-                              <div className="group/frame relative overflow-hidden rounded-2xl border-2 border-black/10 bg-black/5 shadow-md">
-                                {activeProject.imageSrc ? (
-                                  <div className="relative aspect-[16/10] w-full overflow-hidden">
-                                    {/* Primary Image (default) */}
+                          {/* Contact — compact stack + sci-fi HUD in margins only */}
+                          <div className="channel-registry-col relative flex min-h-[280px] flex-col justify-center overflow-hidden px-6 py-10 lg:col-span-3 lg:min-h-[min(100%,360px)] lg:px-8 lg:py-12">
+                            <div className="channel-registry-hud pointer-events-none absolute inset-0 z-0" aria-hidden>
+                              <span className="channel-hud-grid" />
+                              <span className="channel-hud-scan" />
+                              <span className="channel-hud-radar" />
+                              <span className="channel-hud-waves" />
+                              <span className="channel-hud-node channel-hud-node--tr" />
+                              <span className="channel-hud-node channel-hud-node--bl" />
+                            </div>
+                            <div className="relative z-10 flex flex-col gap-5">
+                              <p className="overview-mono bg-white text-center text-[10px] font-medium uppercase tracking-[0.35em] text-black/40 lg:text-left">
+                                Channel registry
+                              </p>
+                              <div className="flex flex-col divide-y divide-black/[0.08] rounded-xl border border-black/10 bg-white shadow-sm">
+                                <div className="px-4 py-4">
+                                  <p className="overview-mono mb-1.5 text-[9px] font-semibold uppercase tracking-[0.28em] text-black/40">
+                                    Email
+                                  </p>
+                                  <a
+                                    className="overview-mono break-all text-sm font-medium text-black underline-offset-2 hover:underline"
+                                    href={`mailto:${portfolio.contact.email}`}
+                                  >
+                                    {portfolio.contact.email}
+                                  </a>
+                                </div>
+
+                                {portfolio.contact.phone ? (
+                                  <div className="px-4 py-4">
+                                    <p className="overview-mono mb-1.5 text-[9px] font-semibold uppercase tracking-[0.28em] text-black/40">
+                                      Phone
+                                    </p>
+                                    <a
+                                      className="overview-mono text-sm font-medium text-black underline-offset-2 hover:underline"
+                                      href={`tel:${portfolio.contact.phone}`}
+                                    >
+                                      {portfolio.contact.phone}
+                                    </a>
+                                  </div>
+                                ) : null}
+
+                                {links.length ? (
+                                  <div className="px-4 py-4">
+                                    <p className="overview-mono mb-2 text-[9px] font-semibold uppercase tracking-[0.28em] text-black/40">
+                                      Links
+                                    </p>
+                                    <div className="flex flex-wrap gap-x-4 gap-y-2">
+                                      {links.map((s: any) => (
+                                        <a
+                                          key={s.label}
+                                          className="overview-mono text-sm font-medium text-black underline-offset-2 hover:underline"
+                                          href={s.href}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                        >
+                                          {s.label}
+                                        </a>
+                                      ))}
+                                    </div>
+                                  </div>
+                                ) : null}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </Container>
+                </div>
+
+                <Container>
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.2 }}
+                    variants={inquiryRevealGroup}
+                  >
+                    <Section
+                      id="education"
+                      className={cx(orbitron.variable, "section-heading-orbitron")}
+                      heading={{
+                        eyebrow: "Academic Pathway",
+                        title: "Education & Specialization",
+                        subtitle:
+                          "Institutional degree and Service Management Program (IT-SMP) major.",
+                      }}
+                    >
+                      <motion.div variants={scrollRevealGroup} className="grid gap-6">
+                        {portfolio.education.map((edu, idx) => (
+                          <motion.div key={idx} variants={scrollRevealItem}>
+                            <Card className="group relative overflow-hidden border-2 border-black/10 bg-white p-6 lg:p-8 shadow-sm">
+                              {/* Half of the Logo as Background on Mobile / Desktop Right */}
+                              {edu.logoSrc && (
+                                <div className="absolute inset-y-0 right-0 left-0 sm:left-auto sm:w-1/2 pointer-events-none overflow-hidden z-0 flex items-center justify-center sm:justify-end opacity-65 sm:opacity-95 transition-all duration-300">
+                                  <div className="relative h-[85%] w-[85%] sm:h-[120%] sm:w-[120%] sm:translate-x-1/15 transition-transform duration-500 group-hover:scale-105">
                                     <Image
-                                      src={activeProject.imageSrc}
-                                      alt={`${activeProject.name} preview`}
+                                      src={edu.logoSrc}
+                                      alt=""
                                       fill
-                                      className="object-cover transition-all duration-700 group-hover/frame:scale-105"
+                                      className="object-contain object-center sm:object-right"
                                       priority
                                     />
-
-                                    {/* Hover Image (crossfade overlay) */}
-                                    {PROJECT_HOVER_IMAGE_MAP[activeProject.imageSrc] && (
-                                      <Image
-                                        src={PROJECT_HOVER_IMAGE_MAP[activeProject.imageSrc]}
-                                        alt={`${activeProject.name} hover preview`}
-                                        fill
-                                        className="object-cover opacity-0 transition-all duration-700 group-hover/frame:opacity-100 group-hover/frame:scale-105"
-                                      />
-                                    )}
-
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                                    <div className="absolute left-4 bottom-4 flex flex-wrap items-center gap-2">
-                                      <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-black/80 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white">
-                                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                                        Case 0{activeProjectIndex + 1}
-                                      </span>
-                                      <span className="rounded-full border border-white/20 bg-white/90 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.2em] text-black">
-                                        {activeProject.date}
-                                      </span>
-                                    </div>
                                   </div>
-                                ) : (
-                                  <div className="aspect-[16/10] bg-black/5 flex items-center justify-center">
-                                    <span className="text-xs font-bold uppercase tracking-widest text-black/40">
-                                      System Preview Ready
+                                  {/* Soft gradient edge transition matching current theme */}
+                                  <div className="education-logo-overlay absolute inset-0 bg-gradient-to-b sm:bg-gradient-to-r from-white/40 via-white/60 to-transparent" />
+                                </div>
+                              )}
+
+                              {/* Content Container (z-10) */}
+                              <div className="relative z-10 space-y-6">
+                                {/* Top Status & Meta Header */}
+                                <div className="flex flex-wrap items-center justify-center sm:justify-between gap-3 border-b border-black/10 pb-4">
+                                  <div className="flex items-center gap-2">
+                                    <span className="inline-flex items-center gap-1.5 rounded-full border border-black/15 bg-black/5 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-black">
+                                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                                      {edu.period}
+                                    </span>
+                                    <span className="rounded-full border border-black/10 bg-black/5 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.2em] text-black/70">
+                                      Degree Spec
                                     </span>
                                   </div>
-                                )}
-                              </div>
-
-                              {/* Mini Project Switcher Strip */}
-                              <div className="space-y-2">
-                                <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-black/40">
-                                  Quick Switch Archive
-                                </p>
-                                <div className="grid grid-cols-5 gap-2">
-                                  {projects.map((proj, idx) => {
-                                    const isCurrent = idx === activeProjectIndex;
-                                    return (
-                                      <button
-                                        key={proj.name}
-                                        type="button"
-                                        onClick={() => setActiveProjectIndex(idx)}
-                                        className={cx(
-                                          "relative aspect-[16/10] overflow-hidden rounded-xl border-2 transition-transform duration-200",
-                                          isCurrent
-                                            ? "quick-switch-active border-black ring-2 ring-black/20 scale-105 shadow-sm"
-                                            : "border-black/15 opacity-60 hover:opacity-100 hover:border-black/50"
-                                        )}
-                                      >
-                                        {proj.imageSrc ? (
-                                          <Image
-                                            src={proj.imageSrc}
-                                            alt={proj.name}
-                                            fill
-                                            className="object-cover"
-                                          />
-                                        ) : (
-                                          <div className="h-full w-full bg-black/10" />
-                                        )}
-                                      </button>
-                                    );
-                                  })}
                                 </div>
+
+                                {/* Main Title & Major Banner */}
+                                <div className="space-y-3 flex flex-col items-center sm:items-start text-center sm:text-left">
+                                  <h3 className="text-2xl lg:text-3xl font-black tracking-tight text-black">
+                                    {edu.degree}
+                                  </h3>
+
+                                  <div className="inline-flex flex-wrap items-center justify-center sm:justify-start gap-2 rounded-xl border border-black/20 bg-black/5 px-4 py-2 text-xs font-bold uppercase tracking-widest text-black shadow-xs">
+                                    <FiAward className="size-4 shrink-0 text-black" />
+                                    <span>Major in Service Management Program (IT-SMP)</span>
+                                  </div>
+
+                                  <p className="flex items-center justify-center sm:justify-start gap-2 text-sm font-bold tracking-wide text-black/80">
+                                    {edu.logoSrc ? (
+                                      <Image src={edu.logoSrc} alt={edu.institution} width={22} height={22} className="size-5.5 object-contain shrink-0" />
+                                    ) : (
+                                      <FiBookOpen className="size-4 shrink-0 text-black/50" />
+                                    )}
+                                    <span>{edu.institution}</span>
+                                  </p>
+                                </div>
+
+                                {/* Divider */}
+                                <div className="my-6 border-t border-dashed border-black/15" />
+
+                                {/* Overview & Key Highlights Grid */}
+                                <div className="grid gap-6 lg:grid-cols-[1fr_1.1fr]">
+                                  <div className="space-y-4 border-l-0 sm:border-l-2 border-black/80 pl-0 sm:pl-4 py-1 flex flex-col justify-between items-center sm:items-start text-center sm:text-left">
+                                    <div className="space-y-3">
+                                      <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-black/40">
+                                        Program Overview
+                                      </p>
+                                      {edu.details && (
+                                        <p className="text-sm leading-relaxed font-medium text-black/75">
+                                          {edu.details}
+                                        </p>
+                                      )}
+                                    </div>
+
+                                    {edu.location && (
+                                      <div className="mt-4 w-full rounded-xl border border-black/15 bg-black/5 p-3.5 flex items-center justify-center sm:justify-start gap-3 shadow-xs text-black transition-all hover:border-black/40 hover:bg-black/10">
+                                        <div className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-black/15 bg-black/5 text-black">
+                                          <FiMapPin className="size-5" />
+                                        </div>
+                                        <div className="text-left">
+                                          <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-black/40">
+                                            Campus Location
+                                          </p>
+                                          <p className="text-sm font-black tracking-tight text-black">
+                                            {edu.location}
+                                          </p>
+                                        </div>
+                                      </div>
+                                    )}
+                                  </div>
+
+                                  {edu.highlights && edu.highlights.length > 0 && (
+                                    <div className="space-y-3">
+                                      <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-black/40">
+                                        Core Program Competencies
+                                      </p>
+                                      <div className="grid gap-2.5">
+                                        {edu.highlights.map((h, hIdx) => (
+                                          <div
+                                            key={hIdx}
+                                            className="group/item flex items-start gap-3 rounded-xl border border-black/10 bg-black/5 p-3 text-black shadow-xs transition-all hover:border-black/40 hover:bg-black/10"
+                                          >
+                                            <span className="flex size-6 shrink-0 items-center justify-center rounded-lg border border-black/15 bg-black/10 text-[10px] font-bold text-black group-hover/item:bg-black group-hover/item:text-white transition-colors">
+                                              0{hIdx + 1}
+                                            </span>
+                                            <span className="text-xs font-semibold leading-snug text-black/85">
+                                              {h}
+                                            </span>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                              </div>
+                            </Card>
+                          </motion.div>
+                        ))}
+                      </motion.div>
+                    </Section>
+                  </motion.div>
+
+                  <div className="section-sci-divider" aria-hidden>
+                    <span className="section-sci-divider__core" />
+                    <span className="section-sci-divider__scan" />
+                    <span className="section-sci-divider__scan section-sci-divider__scan--echo" />
+                  </div>
+
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.2 }}
+                    variants={scrollRevealGroup}
+                  >
+                    <Section
+                      id="skills"
+                      className={cx(orbitron.variable, "section-heading-orbitron")}
+                      heading={{
+                        eyebrow: "Capability",
+                        title: "Technical Stack",
+                        subtitle: "Core technologies, databases, and specialized developer tools.",
+                      }}
+                    >
+                      <motion.div variants={scrollRevealGroup} className="grid gap-6 md:grid-cols-3">
+                        {/* Card 1: Frontend & UI */}
+                        <motion.div variants={scrollRevealItem} className="rounded-2xl border border-black/10 bg-gradient-to-b from-black/[0.02] to-transparent p-5">
+                          <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-black/40">
+                            Frontend & UI
+                          </h3>
+                          <div className="grid grid-cols-1 gap-2">
+                            {["HTML", "CSS", "TypeScript", "React", "Next.js", "Tailwind CSS"].map((skill) => (
+                              <SkillChip key={skill} label={skill} iconMap={TECH_ICON_MAP} />
+                            ))}
+                          </div>
+                        </motion.div>
+
+                        {/* Card 2: Backend & Databases */}
+                        <motion.div variants={scrollRevealItem} className="rounded-2xl border border-black/10 bg-gradient-to-b from-black/[0.02] to-transparent p-5">
+                          <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-black/40">
+                            Backend & Databases
+                          </h3>
+                          <div className="grid grid-cols-1 gap-2">
+                            {["PHP", "Node.js", "REST APIs", "MySQL", "Supabase", "Prisma"].map((skill) => (
+                              <SkillChip key={skill} label={skill} iconMap={TECH_ICON_MAP} />
+                            ))}
+                          </div>
+                        </motion.div>
+
+                        {/* Card 3: Developer Tools */}
+                        <motion.div variants={scrollRevealItem} className="rounded-2xl border border-black/10 bg-gradient-to-b from-black/[0.02] to-transparent p-5">
+                          <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-black/40">
+                            Developer Tools
+                          </h3>
+                          <div className="grid grid-cols-1 gap-2">
+                            {portfolio.tools.map((tool) => (
+                              <SkillChip key={tool} label={tool} iconMap={TOOL_ICON_MAP} />
+                            ))}
+                          </div>
+                        </motion.div>
+                      </motion.div>
+
+                      <motion.div variants={scrollRevealItem}>
+                        <SkillsMarqueeCarousel items={[...portfolio.technicalSkills, ...portfolio.tools]} />
+                      </motion.div>
+                    </Section>
+                  </motion.div>
+
+                  <div className="section-sci-divider" aria-hidden>
+                    <span className="section-sci-divider__core" />
+                    <span className="section-sci-divider__scan" />
+                    <span className="section-sci-divider__scan section-sci-divider__scan--echo" />
+                  </div>
+
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.15 }}
+                    variants={projectRevealGroup}
+                  >
+                    <Section
+                      id="project"
+                      className={cx(orbitron.variable, "section-heading-orbitron")}
+                      heading={{
+                        eyebrow: "Featured Work",
+                        title: "Project Archive",
+                        subtitle: "Selected full-stack systems, application platforms, and software architecture.",
+                      }}
+                    >
+                      {activeProject ? (
+                        <motion.div variants={projectRevealGroup} className="space-y-8">
+                          {/* Sci-Fi Project Selector Deck Bar */}
+                          <motion.div variants={projectRevealItem} className="flex flex-col gap-4">
+                            <div className="flex flex-wrap items-center justify-between gap-3">
+                              <p className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-black/40">
+                                Select System Case ({activeProjectIndex + 1} / {projects.length})
+                              </p>
+
+                              <div className="flex items-center gap-2">
+                                <button
+                                  type="button"
+                                  onClick={() =>
+                                    setActiveProjectIndex((prev) =>
+                                      (prev - 1 + projects.length) % projects.length,
+                                    )
+                                  }
+                                  className="inline-flex items-center gap-1.5 rounded-xl border border-black/15 bg-white px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-black transition-all hover:bg-black hover:text-white shadow-xs"
+                                >
+                                  ← Prev
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={() =>
+                                    setActiveProjectIndex((prev) => (prev + 1) % projects.length)
+                                  }
+                                  className="inline-flex items-center gap-1.5 rounded-xl border border-black/15 bg-white px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-black transition-all hover:bg-black hover:text-white shadow-xs"
+                                >
+                                  Next →
+                                </button>
                               </div>
                             </div>
 
-                            {/* Right Column: Project Architecture & Execution Details */}
-                            <div className="space-y-6 lg:col-span-6">
-                              {/* Title & Role Header */}
-                              <div className="space-y-3">
-                                <div className="flex flex-wrap items-center gap-2">
-                                  <span className="rounded-full border border-black/15 bg-black/5 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.2em] text-black">
-                                    {activeProject.role}
-                                  </span>
-                                  <span className="text-xs font-semibold text-black/40">
-                                    • {activeProject.date}
-                                  </span>
-                                </div>
-
-                                <h3 className="text-2xl lg:text-3xl font-black tracking-tight text-black">
-                                  {activeProject.name}
-                                </h3>
-
-                                <p className="text-sm leading-relaxed font-medium text-black/75">
-                                  {activeProject.description}
-                                </p>
-                              </div>
-
-                              {/* Stack Matrix */}
-                              <div className="space-y-2.5 pt-2">
-                                <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-black/40">
-                                  Technology Stack Matrix
-                                </p>
-                                <div className="flex flex-wrap gap-2">
-                                  {activeProject.techStack.map((tech) => (
-                                    <Pill key={`${activeProject.name}-${tech}`}>
-                                      <span className="inline-flex items-center gap-1.5 font-bold">
-                                        {(() => {
-                                          const TechIcon = PROJECT_TECH_ICON_MAP[normalizeSkillKey(tech)] ?? FiCode;
-                                          return <TechIcon className="size-3.5 text-black" aria-hidden />;
-                                        })()}
-                                        <span>{tech}</span>
-                                      </span>
-                                    </Pill>
-                                  ))}
-                                </div>
-                              </div>
-
-                              {/* Execution Highlights */}
-                              <div className="space-y-3 pt-2">
-                                <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-black/40">
-                                  Key Execution Highlights
-                                </p>
-                                <div className="grid gap-2.5">
-                                  {activeProject.highlights.map((h, i) => (
-                                    <div
-                                      key={i}
-                                      className="group/h flex items-start gap-3 rounded-xl border border-black/10 bg-black/[0.02] p-3.5 transition-colors hover:border-black/40 hover:bg-black/[0.04]"
+                            {/* Interactive Case Tabs */}
+                            <div className="flex overflow-x-auto pb-2 scrollbar-none gap-2">
+                              {projects.map((project, i) => {
+                                const isActive = i === activeProjectIndex;
+                                return (
+                                  <button
+                                    key={project.name}
+                                    type="button"
+                                    onClick={() => setActiveProjectIndex(i)}
+                                    className={cx(
+                                      "group relative flex shrink-0 items-center gap-2.5 rounded-xl border px-4 py-2.5 text-left text-xs font-bold transition-transform duration-200 shadow-xs",
+                                      isActive
+                                        ? isDarkMode
+                                          ? "case-tab-active border-white !bg-white !text-black shadow-md scale-[1.02]"
+                                          : "case-tab-active border-black bg-black text-white shadow-md scale-[1.02]"
+                                        : isDarkMode
+                                          ? "border-white/20 bg-white/10 text-white/70 hover:border-white/40 hover:bg-white/15"
+                                          : "border-black/10 bg-white text-black/70 hover:border-black/40 hover:bg-black/5"
+                                    )}
+                                  >
+                                    <span
+                                      className={cx(
+                                        "case-tab-num flex size-5 shrink-0 items-center justify-center rounded-md text-[10px] font-extrabold transition-colors",
+                                        isActive
+                                          ? isDarkMode
+                                            ? "!bg-black/15 !text-black"
+                                            : "bg-white/20 text-white"
+                                          : isDarkMode
+                                            ? "bg-white/15 text-white/80 group-hover:bg-white/25"
+                                            : "bg-black/5 text-black/60 group-hover:bg-black/10"
+                                      )}
                                     >
-                                      <span className="flex size-6 shrink-0 items-center justify-center rounded-lg border border-black/15 bg-white text-[10px] font-bold text-black group-hover/h:bg-black group-hover/h:text-white transition-colors">
-                                        0{i + 1}
+                                      0{i + 1}
+                                    </span>
+                                    <span className="truncate max-w-[150px] sm:max-w-[200px]">
+                                      {project.name}
+                                    </span>
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </motion.div>
+
+                          {/* Main Showcase Card */}
+                          <motion.div
+                            key={`${activeProject.name}-${activeProjectIndex}`}
+                            variants={projectRevealItem}
+                            initial={{ opacity: 0, y: 16, filter: "blur(4px)" }}
+                            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                          >
+                            <Card className="group relative overflow-hidden border-2 border-black/10 bg-white p-6 lg:p-8 hover:border-black/80 hover:shadow-[0_24px_70px_-30px_rgba(0,0,0,0.24)]">
+                              <div className="grid gap-8 lg:grid-cols-12 items-start">
+                                {/* Left Column: Visual System Preview & Quick Select Deck */}
+                                <div className="space-y-6 lg:col-span-6">
+                                  {/* Hero Preview Frame */}
+                                  <div className="group/frame relative overflow-hidden rounded-2xl border-2 border-black/10 bg-black/5 shadow-md">
+                                    {activeProject.imageSrc ? (
+                                      <div className="relative aspect-[16/10] w-full overflow-hidden">
+                                        {/* Primary Image (default) */}
+                                        <Image
+                                          src={activeProject.imageSrc}
+                                          alt={`${activeProject.name} preview`}
+                                          fill
+                                          className="object-cover transition-all duration-700 group-hover/frame:scale-105"
+                                          priority
+                                        />
+
+                                        {/* Hover Image (crossfade overlay) */}
+                                        {PROJECT_HOVER_IMAGE_MAP[activeProject.imageSrc] && (
+                                          <Image
+                                            src={PROJECT_HOVER_IMAGE_MAP[activeProject.imageSrc]}
+                                            alt={`${activeProject.name} hover preview`}
+                                            fill
+                                            className="object-cover opacity-0 transition-all duration-700 group-hover/frame:opacity-100 group-hover/frame:scale-105"
+                                          />
+                                        )}
+
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+                                        <div className="absolute left-4 bottom-4 flex flex-wrap items-center gap-2">
+                                          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-black/80 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white">
+                                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                                            Case 0{activeProjectIndex + 1}
+                                          </span>
+                                          <span className="rounded-full border border-white/20 bg-white/90 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.2em] text-black">
+                                            {activeProject.date}
+                                          </span>
+                                        </div>
+                                      </div>
+                                    ) : (
+                                      <div className="aspect-[16/10] bg-black/5 flex items-center justify-center">
+                                        <span className="text-xs font-bold uppercase tracking-widest text-black/40">
+                                          System Preview Ready
+                                        </span>
+                                      </div>
+                                    )}
+                                  </div>
+
+                                  {/* Mini Project Switcher Strip */}
+                                  <div className="space-y-2">
+                                    <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-black/40">
+                                      Quick Switch Archive
+                                    </p>
+                                    <div className="grid grid-cols-5 gap-2">
+                                      {projects.map((proj, idx) => {
+                                        const isCurrent = idx === activeProjectIndex;
+                                        return (
+                                          <button
+                                            key={proj.name}
+                                            type="button"
+                                            onClick={() => setActiveProjectIndex(idx)}
+                                            className={cx(
+                                              "relative aspect-[16/10] overflow-hidden rounded-xl border-2 transition-transform duration-200",
+                                              isCurrent
+                                                ? "quick-switch-active border-black ring-2 ring-black/20 scale-105 shadow-sm"
+                                                : "border-black/15 opacity-60 hover:opacity-100 hover:border-black/50"
+                                            )}
+                                          >
+                                            {proj.imageSrc ? (
+                                              <Image
+                                                src={proj.imageSrc}
+                                                alt={proj.name}
+                                                fill
+                                                className="object-cover"
+                                              />
+                                            ) : (
+                                              <div className="h-full w-full bg-black/10" />
+                                            )}
+                                          </button>
+                                        );
+                                      })}
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {/* Right Column: Project Architecture & Execution Details */}
+                                <div className="space-y-6 lg:col-span-6">
+                                  {/* Title & Role Header */}
+                                  <div className="space-y-3">
+                                    <div className="flex flex-wrap items-center gap-2">
+                                      <span className="rounded-full border border-black/15 bg-black/5 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.2em] text-black">
+                                        {activeProject.role}
                                       </span>
-                                      <p className="text-xs font-semibold leading-relaxed text-black/85">
-                                        {h}
+                                      <span className="text-xs font-semibold text-black/40">
+                                        • {activeProject.date}
+                                      </span>
+                                    </div>
+
+                                    <h3 className="text-2xl lg:text-3xl font-black tracking-tight text-black">
+                                      {activeProject.name}
+                                    </h3>
+
+                                    <p className="text-sm leading-relaxed font-medium text-black/75">
+                                      {activeProject.description}
+                                    </p>
+                                  </div>
+
+                                  {/* Stack Matrix */}
+                                  <div className="space-y-2.5 pt-2">
+                                    <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-black/40">
+                                      Technology Stack Matrix
+                                    </p>
+                                    <div className="flex flex-wrap gap-2">
+                                      {activeProject.techStack.map((tech) => (
+                                        <Pill key={`${activeProject.name}-${tech}`}>
+                                          <span className="inline-flex items-center gap-1.5 font-bold">
+                                            {(() => {
+                                              const TechIcon = PROJECT_TECH_ICON_MAP[normalizeSkillKey(tech)] ?? FiCode;
+                                              return <TechIcon className="size-3.5 text-black" aria-hidden />;
+                                            })()}
+                                            <span>{tech}</span>
+                                          </span>
+                                        </Pill>
+                                      ))}
+                                    </div>
+                                  </div>
+
+                                  {/* Execution Highlights */}
+                                  <div className="space-y-3 pt-2">
+                                    <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-black/40">
+                                      Key Execution Highlights
+                                    </p>
+                                    <div className="grid gap-2.5">
+                                      {activeProject.highlights.map((h, i) => (
+                                        <div
+                                          key={i}
+                                          className="group/h flex items-start gap-3 rounded-xl border border-black/10 bg-black/[0.02] p-3.5 transition-colors hover:border-black/40 hover:bg-black/[0.04]"
+                                        >
+                                          <span className="flex size-6 shrink-0 items-center justify-center rounded-lg border border-black/15 bg-white text-[10px] font-bold text-black group-hover/h:bg-black group-hover/h:text-white transition-colors">
+                                            0{i + 1}
+                                          </span>
+                                          <p className="text-xs font-semibold leading-relaxed text-black/85">
+                                            {h}
+                                          </p>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </div>
+
+                                  {/* Continuous Live Code Terminal Animation Stream (0ms CSS Theme Swap) */}
+                                  <ProjectLiveCodeTerminal techStack={activeProject.techStack} />
+                                </div>
+                              </div>
+                            </Card>
+                          </motion.div>
+                        </motion.div>
+                      ) : null}
+                    </Section>
+                  </motion.div>
+
+                  <div className="section-sci-divider" aria-hidden>
+                    <span className="section-sci-divider__core" />
+                    <span className="section-sci-divider__scan" />
+                    <span className="section-sci-divider__scan section-sci-divider__scan--echo" />
+                  </div>
+
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.2 }}
+                    variants={scrollRevealGroup}
+                  >
+                    <Section
+                      id="achievements"
+                      className={cx(orbitron.variable, "section-heading-orbitron")}
+                      heading={{
+                        eyebrow: "Milestones",
+                        title: "Achievements & Certs",
+                      }}
+                    >
+                      <motion.div variants={scrollRevealItem}>
+                        <Card className="overflow-hidden border border-black/10 bg-white p-0 shadow-[0_20px_60px_-36px_rgba(0,0,0,0.2)]">
+                          <div className="divide-y divide-black/10">
+                            {milestoneItems.map((item, i) => {
+                              const isOpen = openMilestoneId === item.id;
+                              return (
+                                <div
+                                  key={item.id}
+                                  className={cx("milestone-item relative", isOpen && "is-open")}
+                                >
+                                  <button
+                                    type="button"
+                                    onClick={() => setOpenMilestoneId((prev) => (prev === item.id ? null : item.id))}
+                                    className="milestone-toggle group relative flex w-full items-center justify-between gap-3 px-5 py-4 text-left transition hover:bg-black/[0.03]"
+                                  >
+                                    <div className="min-w-0">
+                                      <p className="text-base font-semibold leading-snug text-black">
+                                        {item.title}
                                       </p>
                                     </div>
-                                  ))}
-                                </div>
-                              </div>
+                                    <span
+                                      className={cx(
+                                        "milestone-chevron inline-flex size-9 shrink-0 items-center justify-center rounded-full border border-black/15 bg-white text-black/60 transition-all duration-1000",
+                                        isOpen && "rotate-180 border-black/40 text-black",
+                                      )}
+                                    >
+                                      <FiChevronDown className="size-4" aria-hidden />
+                                    </span>
+                                  </button>
 
-                              {/* Continuous Live Code Terminal Animation Stream (0ms CSS Theme Swap) */}
-                              <ProjectLiveCodeTerminal techStack={activeProject.techStack} />
-                            </div>
+                                  <div
+                                    className={cx(
+                                      "milestone-panel grid transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]",
+                                      isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
+                                    )}
+                                  >
+                                    <div className="overflow-hidden">
+                                      <div className="border-t border-black/10 bg-black/[0.02] px-5 py-3.5">
+                                        <p className="text-xs font-medium uppercase tracking-[0.2em] text-black/45">
+                                          {item.meta}
+                                        </p>
+                                        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-black/70">
+                                          {item.details}
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            })}
                           </div>
                         </Card>
                       </motion.div>
-                    </motion.div>
-                  ) : null}
-                </Section>
-              </motion.div>
-
-              <div className="section-sci-divider" aria-hidden>
-                <span className="section-sci-divider__core" />
-                <span className="section-sci-divider__scan" />
-                <span className="section-sci-divider__scan section-sci-divider__scan--echo" />
-              </div>
-
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.2 }}
-                variants={scrollRevealGroup}
-              >
-                <Section
-                  id="achievements"
-                  className={cx(orbitron.variable, "section-heading-orbitron")}
-                  heading={{
-                    eyebrow: "Milestones",
-                    title: "Achievements & Certs",
-                  }}
-                >
-                  <motion.div variants={scrollRevealItem}>
-                  <Card className="overflow-hidden border border-black/10 bg-white p-0 shadow-[0_20px_60px_-36px_rgba(0,0,0,0.2)]">
-                    <div className="divide-y divide-black/10">
-                      {milestoneItems.map((item, i) => {
-                        const isOpen = openMilestoneId === item.id;
-                        return (
-                          <div
-                            key={item.id}
-                            className={cx("milestone-item relative", isOpen && "is-open")}
-                          >
-                            <button
-                              type="button"
-                              onClick={() => setOpenMilestoneId((prev) => (prev === item.id ? null : item.id))}
-                              className="milestone-toggle group relative flex w-full items-center justify-between gap-3 px-5 py-4 text-left transition hover:bg-black/[0.03]"
-                            >
-                              <div className="min-w-0">
-                                <p className="text-base font-semibold leading-snug text-black">
-                                  {item.title}
-                                </p>
-                              </div>
-                              <span
-                                className={cx(
-                                  "milestone-chevron inline-flex size-9 shrink-0 items-center justify-center rounded-full border border-black/15 bg-white text-black/60 transition-all duration-1000",
-                                  isOpen && "rotate-180 border-black/40 text-black",
-                                )}
-                              >
-                                <FiChevronDown className="size-4" aria-hidden />
-                              </span>
-                            </button>
-
-                            <div
-                              className={cx(
-                                "milestone-panel grid transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]",
-                                isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
-                              )}
-                            >
-                              <div className="overflow-hidden">
-                                <div className="border-t border-black/10 bg-black/[0.02] px-5 py-3.5">
-                                  <p className="text-xs font-medium uppercase tracking-[0.2em] text-black/45">
-                                    {item.meta}
-                                  </p>
-                                  <p className="mt-2 max-w-3xl text-sm leading-relaxed text-black/70">
-                                    {item.details}
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </Card>
+                    </Section>
                   </motion.div>
-                </Section>
-              </motion.div>
 
-              <div className="section-sci-divider" aria-hidden>
-                <span className="section-sci-divider__core" />
-                <span className="section-sci-divider__scan" />
-                <span className="section-sci-divider__scan section-sci-divider__scan--echo" />
-              </div>
-
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.2 }}
-                variants={scrollRevealGroup}
-              >
-                <Section
-                  id="contact"
-                  className={cx(orbitron.variable, "section-heading-orbitron")}
-                  heading={{
-                    eyebrow: "Communication",
-                    title: "System Inquiry",
-                    subtitle: "Initiate a direct connection or system request.",
-                  }}
-                >
-                  <motion.div variants={inquiryRevealItem}>
-                    <Card className="p-6 border-2 border-black/5">
-                      <ContactForm defaultEmail={portfolio.contact.email} />
-                    </Card>
-                  </motion.div>
-                </Section>
-              </motion.div>
-              <footer className="site-footer relative mt-8 overflow-hidden rounded-2xl border border-black/10 bg-gradient-to-b from-white to-black/[0.02] p-5 sm:p-6">
-                <div className="pointer-events-none absolute inset-0 opacity-35 [background:linear-gradient(transparent_0%,transparent_96%,rgba(0,0,0,0.08)_100%),linear-gradient(90deg,transparent_0%,transparent_98%,rgba(0,0,0,0.06)_100%)] [background-size:100%_24px,24px_100%]" />
-                <div className="relative z-[1] grid gap-5 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_auto] lg:items-center">
-                  <div>
-                    <p className="overview-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-black/45">
-                      System Footer
-                    </p>
-                    <p className="mt-1 text-sm font-semibold text-black">{portfolio.fullName}</p>
-                    <p className="mt-1 text-xs text-black/65">
-                      Built with{" "}
-                      <span className="inline-flex items-center gap-1.5 align-middle">
-                        <SiTypescript className="size-3.5" aria-hidden />
-                        <span>TypeScript</span>
-                      </span>
-                      ,{" "}
-                      <span className="inline-flex items-center gap-1.5 align-middle">
-                        <SiNextdotjs className="size-3.5" aria-hidden />
-                        <span>Next.js</span>
-                      </span>
-                      , and{" "}
-                      <span className="inline-flex items-center gap-1.5 align-middle">
-                        <SiTailwindcss className="size-3.5" aria-hidden />
-                        <span>Tailwind CSS</span>
-                      </span>
-                      . Deployed on{" "}
-                      <span className="inline-flex items-center gap-1.5 align-middle">
-                        <SiVercel className="size-3.5" aria-hidden />
-                        <span>Vercel</span>
-                      </span>
-                      .
-                    </p>
+                  <div className="section-sci-divider" aria-hidden>
+                    <span className="section-sci-divider__core" />
+                    <span className="section-sci-divider__scan" />
+                    <span className="section-sci-divider__scan section-sci-divider__scan--echo" />
                   </div>
 
-                  <div className="grid gap-2 text-xs text-black/70">
-                    <a
-                      href={`mailto:${portfolio.contact.email}`}
-                      className="inline-flex items-center gap-2 transition hover:text-black"
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.2 }}
+                    variants={scrollRevealGroup}
+                  >
+                    <Section
+                      id="contact"
+                      className={cx(orbitron.variable, "section-heading-orbitron")}
+                      heading={{
+                        eyebrow: "Communication",
+                        title: "System Inquiry",
+                        subtitle: "Initiate a direct connection or system request.",
+                      }}
                     >
-                      <FiMail className="size-3.5" aria-hidden />
-                      <span>{portfolio.contact.email}</span>
-                    </a>
-                    {portfolio.contact.phone ? (
-                      <a
-                        href={`tel:${portfolio.contact.phone}`}
-                        className="inline-flex items-center gap-2 transition hover:text-black"
-                      >
-                        <FiPhone className="size-3.5" aria-hidden />
-                        <span>{portfolio.contact.phone}</span>
-                      </a>
-                    ) : null}
-                    {portfolio.contact.location ? (
-                      <p className="inline-flex items-center gap-2">
-                        <FiMapPin className="size-3.5" aria-hidden />
-                        <span>{portfolio.contact.location}</span>
-                      </p>
-                    ) : null}
-                  </div>
+                      <motion.div variants={inquiryRevealItem}>
+                        <Card className="p-6 border-2 border-black/5">
+                          <ContactForm defaultEmail={portfolio.contact.email} />
+                        </Card>
+                      </motion.div>
+                    </Section>
+                  </motion.div>
+                  <footer className="site-footer relative mt-8 overflow-hidden rounded-2xl border border-black/10 bg-gradient-to-b from-white to-black/[0.02] p-5 sm:p-6">
+                    <div className="pointer-events-none absolute inset-0 opacity-35 [background:linear-gradient(transparent_0%,transparent_96%,rgba(0,0,0,0.08)_100%),linear-gradient(90deg,transparent_0%,transparent_98%,rgba(0,0,0,0.06)_100%)] [background-size:100%_24px,24px_100%]" />
+                    <div className="relative z-[1] grid gap-5 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_auto] lg:items-center">
+                      <div>
+                        <p className="overview-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-black/45">
+                          System Footer
+                        </p>
+                        <p className="mt-1 text-sm font-semibold text-black">{portfolio.fullName}</p>
+                        <p className="mt-1 text-xs text-black/65">
+                          Built with{" "}
+                          <span className="inline-flex items-center gap-1.5 align-middle">
+                            <SiTypescript className="size-3.5" aria-hidden />
+                            <span>TypeScript</span>
+                          </span>
+                          ,{" "}
+                          <span className="inline-flex items-center gap-1.5 align-middle">
+                            <SiNextdotjs className="size-3.5" aria-hidden />
+                            <span>Next.js</span>
+                          </span>
+                          , and{" "}
+                          <span className="inline-flex items-center gap-1.5 align-middle">
+                            <SiTailwindcss className="size-3.5" aria-hidden />
+                            <span>Tailwind CSS</span>
+                          </span>
+                          . Deployed on{" "}
+                          <span className="inline-flex items-center gap-1.5 align-middle">
+                            <SiVercel className="size-3.5" aria-hidden />
+                            <span>Vercel</span>
+                          </span>
+                          .
+                        </p>
+                      </div>
 
-                  <div className="flex flex-wrap items-center gap-2">
-                    {portfolio.contact.socials.map((social) => {
-                      const key = social.label.toLowerCase();
-                      const SocialIcon =
-                        key.includes("github")
-                          ? FiGithub
-                          : key.includes("linkedin")
-                            ? FiLinkedin
-                            : key.includes("facebook")
-                              ? FiFacebook
-                              : FiExternalLink;
-                      return (
+                      <div className="grid gap-2 text-xs text-black/70">
                         <a
-                          key={social.label}
-                          href={social.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="footer-social-link inline-flex items-center gap-1.5 rounded-md border border-black/15 bg-white px-2.5 py-1.5 text-[11px] font-semibold text-black/75 transition hover:border-black/35 hover:text-black"
+                          href={`mailto:${portfolio.contact.email}`}
+                          className="inline-flex items-center gap-2 transition hover:text-black"
                         >
-                          <SocialIcon className="size-3.5" aria-hidden />
-                          <span>{social.label}</span>
+                          <FiMail className="size-3.5" aria-hidden />
+                          <span>{portfolio.contact.email}</span>
                         </a>
-                      );
-                    })}
-                  </div>
-                </div>
-              </footer>
-            </Container>
-            </div>
+                        {portfolio.contact.phone ? (
+                          <a
+                            href={`tel:${portfolio.contact.phone}`}
+                            className="inline-flex items-center gap-2 transition hover:text-black"
+                          >
+                            <FiPhone className="size-3.5" aria-hidden />
+                            <span>{portfolio.contact.phone}</span>
+                          </a>
+                        ) : null}
+                        {portfolio.contact.location ? (
+                          <p className="inline-flex items-center gap-2">
+                            <FiMapPin className="size-3.5" aria-hidden />
+                            <span>{portfolio.contact.location}</span>
+                          </p>
+                        ) : null}
+                      </div>
+
+                      <div className="flex flex-wrap items-center gap-2">
+                        {portfolio.contact.socials.map((social) => {
+                          const key = social.label.toLowerCase();
+                          const SocialIcon =
+                            key.includes("github")
+                              ? FiGithub
+                              : key.includes("linkedin")
+                                ? FiLinkedin
+                                : key.includes("facebook")
+                                  ? FiFacebook
+                                  : FiExternalLink;
+                          return (
+                            <a
+                              key={social.label}
+                              href={social.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="footer-social-link inline-flex items-center gap-1.5 rounded-md border border-black/15 bg-white px-2.5 py-1.5 text-[11px] font-semibold text-black/75 transition hover:border-black/35 hover:text-black"
+                            >
+                              <SocialIcon className="size-3.5" aria-hidden />
+                              <span>{social.label}</span>
+                            </a>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </footer>
+                </Container>
+              </div>
             </main>
           </motion.div>
         )}
