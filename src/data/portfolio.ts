@@ -10,12 +10,23 @@ export type PortfolioProject = {
   description: string;
   highlights: string[];
   techStack: string[];
+  imageSrc?: string;
 };
 
 export type PortfolioMilestone = {
   title: string;
   meta: string;
   details: string;
+};
+
+export type PortfolioEducation = {
+  degree: string;
+  institution: string;
+  location?: string;
+  period: string;
+  details?: string;
+  highlights?: string[];
+  logoSrc?: string;
 };
 
 export type PortfolioData = {
@@ -27,6 +38,7 @@ export type PortfolioData = {
     location?: string;
     socials: SocialLink[];
   };
+  education: PortfolioEducation[];
   technicalSkills: string[];
   tools: string[];
   projects: PortfolioProject[];
@@ -47,6 +59,23 @@ export const portfolio: PortfolioData = {
       { label: "Facebook", href: "https://www.facebook.com/malillos.va" }
     ]
   },
+  education: [
+    {
+      degree: "Bachelor of Science in Information Technology",
+      institution: "Laguna State Polytechnic University - San Pablo Campus",
+      location: "San Pablo City, Laguna, Philippines",
+      period: "2022 – 2026",
+      logoSrc: "/img/lspu1.png",
+      details:
+        "Specializing in the Service Management Program (IT-SMP), integrating full-stack web development, enterprise IT service delivery, business process management, and systems engineering.",
+      highlights: [
+        "Major in Service Management Program (IT-SMP)",
+        "IT Service Delivery, Business Process Automation & Enterprise Systems",
+        "Full-Stack Web Development, Database Management & System Architecture",
+        "Capstone & Enterprise Software Solutions Development"
+      ]
+    }
+  ],
   technicalSkills: [
     "HTML",
     "CSS",
@@ -64,88 +93,79 @@ export const portfolio: PortfolioData = {
   tools: ["Figma", "Postman", "VS Code", "Jira", "XAMPP", "Laragon"],
   projects: [
     {
-      name: "DejaBrew Employee Management System",
-      role: "Backend Developer",
-      date: "March 2024",
-      description:
-        "Currently taking Bachelor of Science in Information Technology, Major in Service Management Program at Laguna State Polytechnic University - San Pablo City Campus.",
-      highlights: [
-        "Implemented an attendance system using employee IDs",
-        "Developed secure login and role-based access controls for staff and administrators",
-        "Built employee profile and status modules for onboarding and account maintenance",
-        "Created attendance summaries and exportable records for payroll preparation"
-      ],
-      techStack: ["HTML", "CSS", "PHP", "MySQL"]
-    },
-    {
-      name: "Crunchy Noodles RMS",
-      role: "Full-Stack Developer",
-      date: "June 2024",
-      description:
-        "Developed a restaurant management system to handle core ordering and operational workflows.",
-      highlights: [
-        "Built order management modules for dine-in and takeaway transactions",
-        "Implemented sales tracking and daily revenue reporting",
-        "Developed menu and inventory management for item availability and updates",
-        "Added staff-facing interfaces for faster order processing and monitoring"
-      ],
-      techStack: ["HTML", "CSS", "PHP", "MySQL"]
-    },
-    {
-      name: "SIPP: Student Internship Progress Platform",
-      role: "Full-Stack Developer",
-      date: "November 2025",
-      description:
-        "Created a digital internship platform for tracking, documentation, and progress monitoring.",
-      highlights: [
-        "Built digital time tracking for interns",
-        "Implemented digital archiving of OJT-related documents",
-        "Automated narrative report generation for interns",
-        "Enabled online monitoring of student internship progress"
-      ],
-      techStack: ["HTML", "CSS", "PHP", "MySQL"]
-    },
-    {
       name: "Project DILMS School Management System",
       role: "Full-Stack Developer",
       date: "December 2025",
       description:
-        "Developed a school management system to centralize academic records and daily school operations.",
+        "Developed a school-focused digital information and learning management system supporting admin, teacher, student, and parent workflows.",
       highlights: [
-        "Built modules for student enrollment and profile management",
-        "Implemented class, section, and subject assignment workflows",
-        "Developed grade encoding and academic performance reporting",
-        "Added role-based dashboards for administrators, teachers, and staff"
+        "Built announcements, attendance tracking, class schedules, learning modules, grades, student records, reports, and document uploads",
+        "Implemented multi-role support for administrators, teachers, students, and parents",
+        "Integrated secure data management with Prisma, PostgreSQL, and Vercel Blob Storage",
+        "Delivered a responsive Next.js 16 and Tailwind CSS experience for school stakeholders"
       ],
-      techStack: ["TypeScript", "Node.js", "Prisma", "Tailwind CSS"]
+      techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "Vercel Blob Storage"],
+      imageSrc: "/projects/dilms.png"
     },
     {
-      name: "Project-Zfile RMS",
+      name: "ResumEasy",
       role: "Full-Stack Developer",
-      date: "January 2026",
+      date: "May 2026",
       description:
-        "Built a resource management platform focused on operational speed and real-time data visibility.",
+        "Built a web-based resume builder with layout selection, color themes, and live profile editing for experience, education, projects, and certifications.",
       highlights: [
-        "Implemented order lifecycle tracking from placement to fulfillment",
-        "Built inventory monitoring with low-stock alerts",
-        "Developed sales dashboards with daily and monthly trend summaries",
-        "Integrated role-based access and activity logging for staff operations"
+        "Implemented Supabase authentication and user data persistence",
+        "Built resume builder flows for profile details, skills, experience, education, projects, and certifications",
+        "Delivered polished PDF export using html-to-image, jsPDF, and html2pdf.js",
+        "Created responsive UI with Vite, React Router, and Tailwind CSS"
       ],
-      techStack: ["React", "Laravel", "Supabase"]
+      techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "React Router", "Supabase", "jsPDF"],
+      imageSrc: "/projects/Resumeasy.png"
+    },
+    {
+      name: "SIPP: Student Internship Progress Platform",
+      role: "Full-Stack Developer",
+      date: "June 2025",
+      description:
+        "Built a student internship management portal for registration, document tracking, time logs, weekly reports, and approval workflows across coordinators and departments.",
+      highlights: [
+        "Implemented authentication, session management, and role-based access",
+        "Built document tracking, weekly report submission, digital time logging, and approval workflows",
+        "Integrated AJAX-driven endpoints with PHP for dynamic portal interactions",
+        "Automated document generation for internship reports using Dompdf/mPDF"
+      ],
+      techStack: ["PHP", "MySQL/MariaDB", "HTML", "CSS", "JavaScript", "Bootstrap 4", "AdminLTE", "jQuery", "PHPMailer", "Dompdf"],
+      imageSrc: "/projects/SIPP.png"
     },
     {
       name: "Rentertain E-Commerce Platform",
       role: "Full-Stack Developer",
       date: "February 2026",
       description:
-        "Developed an e-commerce platform for listing, renting, and managing entertainment-related products.",
+        "Delivered a rental management system for equipment and videoke rentals with separate customer and admin experiences.",
       highlights: [
-        "Built product catalog browsing with category and search filters",
-        "Implemented cart, checkout, and order confirmation workflows",
-        "Developed seller/admin product management tools",
-        "Added customer account and order history features"
+        "Built customer authentication, catalog browsing, cart and checkout, and order history",
+        "Implemented rental tracking, inventory management, and status updates",
+        "Added admin-facing order management and reporting tools",
+        "Integrated PHPMailer for customer and admin notifications"
       ],
-      techStack: ["React", "PHP", "CSS"]
+      techStack: ["PHP", "MySQL", "React", "Vite", "React Router", "PHPMailer"],
+      imageSrc: "/projects/rentit.png"
+    },
+    {
+      name: "ALUmytics",
+      role: "Full-Stack Developer",
+      date: "October 2025",
+      description:
+        "Built an alumni management and analytics system with separate alumni and staff interfaces, registration, email verification, and profile management.",
+      highlights: [
+        "Developed alumni registration, profile management, and staff access workflows",
+        "Implemented secure email verification and data persistence",
+        "Built reporting tools for demographics, employment, certifications, awards, and tracer studies",
+        "Delivered analytics-driven insights for alumni engagement and staff operations"
+      ],
+      techStack: ["PHP", "MySQL/MariaDB", "HTML", "CSS", "JavaScript", "Composer", "PHPWord", "PHPMailer"],
+      imageSrc: "/projects/Alumytics.png"
     }
   ],
   achievements: [

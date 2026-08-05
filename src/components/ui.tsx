@@ -17,7 +17,7 @@ export function Card({ className, ...props }: DivProps) {
   return (
     <div
       className={cx(
-        "rounded-2xl border border-black/10 bg-white shadow-sm transition-shadow hover:shadow-md",
+        "rounded-2xl shadow-sm transition-shadow hover:shadow-md",
         className,
       )}
       {...props}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)" />
+  <text x="600" y="260" text-anchor="middle" font-family="Inter, sans-serif" font-size="82" font-weight="700" fill="#38bdf8">SIPP</text>
+  <text x="600" y="340" text-anchor="middle" font-family="Inter, sans-serif" font-size="40" fill="#e2e8f0">Student Internship Progress Platform</text>
+  <rect x="160" y="420" width="880" height="220" rx="36" fill="#0f172a" opacity="0.92" />
+  <rect x="216" y="470" width="768" height="52" rx="26" fill="#2563eb" />
+  <rect x="216" y="536" width="520" height="52" rx="26" fill="#38bdf8" />
+  <rect x="216" y="602" width="640" height="52" rx="26" fill="#60a5fa" opacity="0.75" />
+</svg>

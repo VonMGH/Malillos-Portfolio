@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)" />
+  <rect x="80" y="80" width="1040" height="640" rx="48" fill="#111827" opacity="0.85" />
+  <rect x="120" y="140" width="960" height="520" rx="32" fill="#0f172a" />
+  <text x="600" y="320" text-anchor="middle" font-family="Inter, sans-serif" font-size="88" font-weight="700" fill="#38bdf8">Project DILMS</text>
+  <text x="600" y="420" text-anchor="middle" font-family="Inter, sans-serif" font-size="44" fill="#f8fafc">School Management System</text>
+  <circle cx="260" cy="540" r="58" fill="#2563eb" opacity="0.9" />
+  <circle cx="820" cy="540" r="58" fill="#22c55e" opacity="0.9" />
+  <rect x="320" y="520" width="560" height="82" rx="24" fill="#0ea5e9" opacity="0.35" />
+</svg>

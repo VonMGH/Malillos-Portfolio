@@ -9,42 +9,65 @@ import { motion } from "framer-motion";
 import { useEffect, useState, type CSSProperties, type MouseEvent } from "react";
 import type { IconType } from "react-icons";
 import {
+  SiBootstrap,
+  SiComposer,
   SiCss,
   SiFigma,
   SiHtml5,
+  SiJavascript,
   SiJira,
+  SiJquery,
+  SiLaragon,
   SiLaravel,
+  SiMariadb,
   SiMysql,
   SiNextdotjs,
   SiNodedotjs,
   SiPhp,
+  SiPostgresql,
   SiPostman,
   SiPrisma,
   SiReact,
+  SiReactrouter,
   SiSqlite,
   SiSupabase,
   SiTailwindcss,
   SiTypescript,
   SiVercel,
+  SiVite,
   SiVscodium,
   SiXampp,
-  SiLaragon,
 } from "react-icons/si";
 import {
+  FiActivity,
+  FiAward,
+  FiBookOpen,
   FiBox,
+  FiCheckCircle,
   FiChevronDown,
   FiCode,
+  FiCompass,
+  FiCpu,
   FiExternalLink,
   FiFacebook,
+  FiFileText,
   FiGithub,
+  FiGrid,
+  FiLayers,
+  FiLayout,
   FiLinkedin,
   FiMail,
   FiMapPin,
   FiMenu,
   FiMoon,
   FiPhone,
+  FiRadio,
+  FiShare2,
   FiSun,
+  FiTerminal,
+  FiTrendingUp,
   FiX,
+  FiZap,
 } from "react-icons/fi";
 
 import Image from "next/image";
@@ -86,64 +109,59 @@ const scrollRevealGroup = {
 };
 
 const scrollRevealItem = {
-  hidden: { opacity: 0, y: 18, filter: "blur(2px)" },
+  hidden: { opacity: 0, y: 18 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.8, ease: SCROLL_REVEAL_EASE },
+    transition: { duration: 0.5, ease: SCROLL_REVEAL_EASE },
   },
 };
 
 const projectRevealGroup = {
-  hidden: { opacity: 0, x: -56, filter: "blur(4px)" },
+  hidden: { opacity: 0, x: -32 },
   visible: {
     opacity: 1,
     x: 0,
-    filter: "blur(0px)",
     transition: {
-      duration: 1.25,
+      duration: 0.6,
       ease: SCROLL_REVEAL_EASE,
-      staggerChildren: 0.24,
-      delayChildren: 0.14,
+      staggerChildren: 0.12,
+      delayChildren: 0.05,
     },
   },
 };
 
 const projectRevealItem = {
-  hidden: { opacity: 0, x: -42, scale: 0.985, filter: "blur(3px)" },
+  hidden: { opacity: 0, x: -24, scale: 0.99 },
   visible: {
     opacity: 1,
     x: 0,
     scale: 1,
-    filter: "blur(0px)",
-    transition: { duration: 1.05, ease: SCROLL_REVEAL_EASE },
+    transition: { duration: 0.5, ease: SCROLL_REVEAL_EASE },
   },
 };
 
 const inquiryRevealGroup = {
-  hidden: { opacity: 0, x: -36, filter: "blur(3px)" },
+  hidden: { opacity: 0, x: -24 },
   visible: {
     opacity: 1,
     x: 0,
-    filter: "blur(0px)",
     transition: {
-      duration: 1.55,
+      duration: 0.6,
       ease: SCROLL_REVEAL_EASE,
-      staggerChildren: 0.28,
-      delayChildren: 0.16,
+      staggerChildren: 0.14,
+      delayChildren: 0.08,
     },
   },
 };
 
 const inquiryRevealItem = {
-  hidden: { opacity: 0, x: -24, y: 10, filter: "blur(2px)" },
+  hidden: { opacity: 0, x: -16, y: 8 },
   visible: {
     opacity: 1,
     x: 0,
     y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 1.25, ease: SCROLL_REVEAL_EASE },
+    transition: { duration: 0.5, ease: SCROLL_REVEAL_EASE },
   },
 };
 
@@ -184,38 +202,318 @@ const PROJECT_TECH_ICON_MAP: Record<string, IconType> = {
   ...ALL_SKILLS_ICON_MAP,
   html: SiHtml5,
   css: SiCss,
+  javascript: SiJavascript,
+  typescript: SiTypescript,
   php: SiPhp,
-  mysql: SiMysql,
+  react: SiReact,
+  nextjs: SiNextdotjs,
+  nodejs: SiNodedotjs,
   tailwindcss: SiTailwindcss,
   laravel: SiLaravel,
   supabase: SiSupabase,
+  prisma: SiPrisma,
+  postgresql: SiPostgresql,
+  mysql: SiMysql,
+  mysqlmariadb: SiMysql,
+  mariadb: SiMariadb,
+  sqlite: SiSqlite,
+  sql: SiSqlite,
+  vite: SiVite,
+  reactrouter: SiReactrouter,
+  bootstrap: SiBootstrap,
+  bootstrap4: SiBootstrap,
+  jquery: SiJquery,
+  composer: SiComposer,
+  vercel: SiVercel,
+  vercelblobstorage: SiVercel,
+  jspdf: FiFileText,
+  dompdf: FiFileText,
+  phpword: FiFileText,
+  phpmailer: FiMail,
+  adminlte: FiLayout,
+  restapis: FiCode,
 };
 
-const BRANDING_CARD_SCI =
-  "branding-card--sci group relative isolate h-full min-h-[128px] overflow-hidden p-6 border-2 border-black/5 transition-[border-color,box-shadow] duration-300 hover:border-black/80 hover:shadow-[0_12px_40px_-16px_rgba(0,0,0,0.18)] [&_h3]:relative [&_h3]:z-[1] [&_p]:relative [&_p]:z-[1]";
+function ProjectSciFiWidget({ index }: { index: number }) {
+  const widgetType = index % 5;
+
+  if (widgetType === 0) {
+    return (
+      <div className="relative min-h-[110px] w-full p-2 flex flex-wrap items-center justify-around gap-4 pointer-events-none select-none">
+        {/* Floating Spinning Radar Orb */}
+        <div className="relative flex size-14 items-center justify-center rounded-full border-2 border-dashed border-black/25 bg-black/[0.03]">
+          <FiCompass className="size-6 text-black/70 animate-spin [animation-duration:12s]" />
+          <span className="absolute size-3 rounded-full bg-black/60 animate-ping" />
+        </div>
+
+        {/* Scattered Telemetry Chips */}
+        <div className="flex flex-col gap-1.5">
+          <span className="rounded-md border border-black/15 bg-white px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.24em] text-black shadow-2xs">
+            RADAR_SCOPE // 98.4MHz
+          </span>
+          <span className="rounded-md border border-black/15 bg-black/5 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.2em] text-black/60">
+            [ FREQ_SCAN // ACTIVE ]
+          </span>
+        </div>
+
+        {/* Scattered Equalizer Stream */}
+        <div className="flex items-center gap-1">
+          {[40, 80, 55, 95, 60, 85].map((val, i) => (
+            <div key={i} className="flex h-9 w-1.5 flex-col justify-end rounded-full bg-black/10">
+              <div
+                className="w-full rounded-full bg-black/80 transition-all duration-500"
+                style={{ height: `${val}%` }}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Floating Bracket Corner Tag */}
+        <div className="text-[10px] font-extrabold uppercase tracking-widest text-black/40">
+          + [ SYS_CORE_01 ]
+        </div>
+      </div>
+    );
+  }
+
+  if (widgetType === 1) {
+    return (
+      <div className="relative min-h-[110px] w-full p-2 flex flex-wrap items-center justify-between gap-3 font-mono text-[10px] pointer-events-none select-none">
+        {/* Scattered Cyber Code Lines */}
+        <div className="rounded-lg border border-black/15 bg-white/90 p-2.5 shadow-2xs space-y-1">
+          <p className="font-bold text-black">&gt; EXEC_CYBER_MATRIX() [OK]</p>
+          <p className="text-black/60">&gt; LATENCY: 0.12ms // BUFFER_SYNC</p>
+        </div>
+
+        {/* Scattered Spinning CPU & Ping Badge */}
+        <div className="flex items-center gap-2 rounded-full border border-black/15 bg-black/5 px-3 py-1.5">
+          <FiCpu className="size-4 text-black animate-spin [animation-duration:8s]" />
+          <span className="font-extrabold tracking-widest text-black/70 uppercase">CYBER_CORE</span>
+        </div>
+
+        {/* Floating Hex Coordinate */}
+        <span className="rounded-md border border-black/10 bg-black text-white px-2 py-1 text-[9px] font-black tracking-widest">
+          0x4F_STREAM
+        </span>
+      </div>
+    );
+  }
+
+  if (widgetType === 2) {
+    return (
+      <div className="relative min-h-[110px] w-full p-2 flex flex-wrap items-center justify-around gap-4 pointer-events-none select-none">
+        {/* Scattered Network Nodes */}
+        <div className="flex items-center gap-2">
+          <div className="flex size-10 items-center justify-center rounded-xl border border-black/20 bg-white shadow-2xs">
+            <FiShare2 className="size-5 text-black animate-pulse" />
+          </div>
+          <div className="space-y-0.5">
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-black">MESH_TOPOLOGY</p>
+            <p className="text-[9px] font-bold uppercase tracking-widest text-black/40">NODE_04 // ACTIVE</p>
+          </div>
+        </div>
+
+        {/* Scattered Floating Pill Tags */}
+        <div className="flex flex-wrap gap-1.5">
+          {["DOCS", "LOGS", "SYNC", "WORKFLOW"].map((tag, i) => (
+            <span key={i} className="rounded-full border border-black/15 bg-white px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-wider text-black shadow-2xs">
+              #{tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  if (widgetType === 3) {
+    return (
+      <div className="relative min-h-[110px] w-full p-2 flex flex-col justify-center gap-3 pointer-events-none select-none">
+        {/* Floating Power Bar & Scattered Badges */}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <FiZap className="size-4 text-black animate-bounce" />
+            <span className="text-[10px] font-black uppercase tracking-[0.22em] text-black">QUANTUM_MATRIX // 98.4%</span>
+          </div>
+          <span className="rounded-md border border-black/15 bg-black text-white px-2 py-0.5 text-[9px] font-black tracking-widest">
+            1.21 GW
+          </span>
+        </div>
+
+        {/* Scattered Segmented LED Blocks */}
+        <div className="grid grid-cols-12 gap-1.5">
+          {[...Array(12)].map((_, i) => (
+            <div
+              key={i}
+              className={cx(
+                "h-2.5 rounded-2xs transition-all duration-300",
+                i < 10 ? "bg-black shadow-2xs" : "bg-black/10"
+              )}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // Widget 4: Analytics Sonar & Trend Matrix Objects
+  return (
+    <div className="relative min-h-[110px] w-full p-2 flex flex-wrap items-center justify-between gap-3 pointer-events-none select-none">
+      {/* Scattered Trend Vector Icon & Badge */}
+      <div className="flex items-center gap-3">
+        <div className="flex size-11 items-center justify-center rounded-2xl border-2 border-black/20 bg-white shadow-2xs">
+          <FiTrendingUp className="size-5 text-black" />
+        </div>
+        <div>
+          <span className="rounded-md border border-black/15 bg-black/5 px-2 py-0.5 text-[9px] font-black uppercase tracking-[0.2em] text-black">
+            SONAR_VECTOR
+          </span>
+          <p className="text-[10px] font-black uppercase tracking-widest text-black mt-1">+34.2% DATA TREND</p>
+        </div>
+      </div>
+
+      {/* Floating Coordinates & HUD Bracket Marks */}
+      <div className="flex items-center gap-2">
+        <span className="rounded-lg border border-black/15 bg-white px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-wider text-black shadow-2xs">
+          STREAM_v4
+        </span>
+        <span className="text-[10px] font-extrabold tracking-widest text-black/40">
+          ┌ 0x8F ┐
+        </span>
+      </div>
+    </div>
+  );
+}
+
+
 
 const SKILL_CODE_SNIPPETS: Record<string, string> = {
   html: "<section id='portfolio'></section>",
-  css: ".card { border-radius: 12px; }",
-  php: "<?php echo 'Backend ready'; ?>",
-  tailwindcss: "className='grid gap-4 md:grid-cols-2'",
+  css: ".card { border-radius: 12px; font-family: sans-serif; }",
+  javascript: "const app = () => { console.log('JS ready'); };",
   typescript: "type Stack = 'TS'; const strict = true;",
-  react: "const UI = <App />; useState(true);",
-  nextjs: "export default function Page() { return null; }",
-  nodejs: "app.get('/api', handler); app.listen(3000);",
+  php: "<?php echo 'Backend API connected'; ?>",
+  tailwindcss: "className='grid gap-4 md:grid-cols-2'",
+  react: "const [state, setState] = useState(true);",
+  nextjs: "export default async function Page() { return <Layout />; }",
+  nodejs: "app.get('/api/v1', (req, res) => res.json({ ok: true }));",
   restapis: "GET /api/v1/resources -> 200 OK",
-  mysql: "SELECT * FROM projects LIMIT 10;",
-  supabase: "supabase.from('logs').select('*')",
-  prisma: "await prisma.user.findMany();",
+  mysql: "SELECT * FROM projects WHERE status = 'active';",
+  mysqlmariadb: "SELECT * FROM internship_logs WHERE status = 'approved';",
+  mariadb: "SELECT * FROM tracer_alumni ORDER BY year DESC;",
+  supabase: "await supabase.from('resumes').select('*');",
+  prisma: "await prisma.project.findMany({ include: { stack: true } });",
+  postgresql: "CREATE TABLE users (id SERIAL PRIMARY KEY, role TEXT);",
+  sqlite: "SELECT * FROM skills WHERE level >= 1;",
   sql: "SELECT * FROM skills WHERE level >= 1;",
+  vite: "export default defineConfig({ plugins: [react()] });",
+  reactrouter: "<Route path='/dashboard' element={<Dashboard />} />",
+  bootstrap: "<div className='row shadow-sm rounded-lg'>",
+  bootstrap4: "<div className='card border-0 shadow-sm p-4'>",
+  jquery: "$('#btn').on('click', () => { $.ajax('/api'); });",
+  composer: "composer require phpmailer/phpmailer phpword/phpword",
+  vercel: "vercel deploy --prod --yes",
+  vercelblobstorage: "await put('avatar.png', file, { access: 'public' });",
+  jspdf: "const doc = new jsPDF(); doc.text('Resume PDF', 10, 10);",
+  dompdf: "$dompdf = new Dompdf(); $dompdf->loadHtml($html);",
+  phpword: "$phpWord = new PhpWord(); $section = $phpWord->addSection();",
+  phpmailer: "$mail->send(); // Email verification dispatched",
+  adminlte: "<div className='wrapper'><aside className='main-sidebar'>",
   figma: "Frame -> Components -> Auto Layout",
   postman: "GET /api/health  // 200 OK",
   vscode: "Ctrl+Shift+P  // Command Palette",
   jira: "Sprint: TODO -> IN_PROGRESS -> DONE",
+  xampp: "Apache / MySQL Server Running",
+  laragon: "Virtual Host Created -> http://app.test",
 };
 
 const getSkillCode = (label: string) =>
   SKILL_CODE_SNIPPETS[normalizeSkillKey(label)] ?? `// ${label}`;
+
+const PROJECT_HOVER_IMAGE_MAP: Record<string, string> = {
+  "/projects/dilms.png": "/projects/dilms2.png",
+  "/projects/Resumeasy.png": "/projects/ResumEasy2.png",
+  "/projects/SIPP.png": "/projects/SIPP2.png",
+  "/projects/rentit.png": "/projects/rentit2.jpg",
+  "/projects/Alumytics.png": "/projects/Alumytics2.png",
+};
+
+function ProjectLiveCodeTerminal({ techStack }: { techStack: string[] }) {
+  const [techIndex, setTechIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const currentTech = techStack[techIndex % techStack.length] || "TypeScript";
+  const fullCode = SKILL_CODE_SNIPPETS[normalizeSkillKey(currentTech)] ?? `// ${currentTech} implementation module`;
+
+  useEffect(() => {
+    setTechIndex(0);
+    setCharIndex(0);
+    setIsDeleting(false);
+  }, [techStack]);
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+
+    if (!isDeleting && charIndex < fullCode.length) {
+      timer = setTimeout(() => setCharIndex((c) => c + 1), 32);
+    } else if (!isDeleting && charIndex === fullCode.length) {
+      timer = setTimeout(() => setIsDeleting(true), 1800);
+    } else if (isDeleting && charIndex > 0) {
+      timer = setTimeout(() => setCharIndex((c) => c - 1), 16);
+    } else if (isDeleting && charIndex === 0) {
+      setIsDeleting(false);
+      setTechIndex((i) => (i + 1) % techStack.length);
+    }
+
+    return () => clearTimeout(timer);
+  }, [charIndex, isDeleting, fullCode, techStack]);
+
+  const Icon = PROJECT_TECH_ICON_MAP[normalizeSkillKey(currentTech)] ?? FiCode;
+
+  return (
+    <div className="project-live-terminal relative overflow-hidden rounded-2xl border border-black/10 bg-white p-4 font-mono text-xs text-black shadow-xs">
+      {/* Terminal Window Header */}
+      <div className="flex items-center justify-between border-b border-black/10 pb-2.5 mb-3 text-[10px]">
+        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5">
+            <span className="terminal-dot size-2 rounded-full bg-black/30" />
+            <span className="terminal-dot size-2 rounded-full bg-black/50" />
+            <span className="terminal-dot terminal-dot--active size-2 rounded-full bg-black" />
+          </div>
+          <span className="ml-2 font-extrabold tracking-widest uppercase text-black/50">
+            LIVE_STACK_STREAM.TSX
+          </span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <span className="terminal-cursor size-1.5 rounded-full bg-black animate-ping" />
+          <span className="font-extrabold uppercase tracking-widest text-black text-[9px]">
+            STREAMING ({techIndex + 1}/{techStack.length})
+          </span>
+        </div>
+      </div>
+
+      {/* Active Code Typing Line */}
+      <div className="space-y-2 min-h-[52px] flex flex-col justify-center">
+        <div className="flex items-center gap-2 text-black/80">
+          <span className="terminal-icon-badge flex size-5 items-center justify-center rounded bg-black/5 text-black">
+            <Icon className="size-3" aria-hidden />
+          </span>
+          <span className="font-bold text-black text-[11px] uppercase tracking-wider">
+            {currentTech}
+          </span>
+          <span className="text-black/40 text-[10px]">&gt;</span>
+        </div>
+
+        <div className="terminal-code-box rounded-lg p-2.5 border border-black/10 bg-black/5 font-mono text-[11px] leading-relaxed text-black font-semibold overflow-x-auto scrollbar-none">
+          <code>
+            {fullCode.slice(0, charIndex)}
+            <span className="terminal-cursor inline-block w-1.5 h-3.5 bg-black align-middle animate-pulse ml-0.5" />
+          </code>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function SkillChip({ label, iconMap }: { label: string; iconMap: Record<string, IconType> }) {
   const Icon = iconMap[normalizeSkillKey(label)] ?? FiBox;
@@ -326,7 +624,7 @@ function HeaderNav({
   onToggleTheme: () => void;
 }) {
   const items = [
-    ["Branding", "#branding"],
+    ["Education", "#education"],
     ["Skills", "#skills"],
     ["Project", "#project"],
     ["Achievements", "#achievements"],
@@ -334,13 +632,13 @@ function HeaderNav({
   ] as const;
   const browserStateByHref: Record<string, { title: string; icon: string }> = {
     "#top": { title: "Malillos | Identity", icon: "/tab-identity.svg" },
-    "#branding": { title: "Malillos | Branding", icon: "/tab-branding.svg" },
+    "#education": { title: "Malillos | Education", icon: "/tab-education.svg" },
     "#skills": { title: "Malillos | Skills", icon: "/tab-skills.svg" },
     "#project": { title: "Malillos | Project", icon: "/tab-project.svg" },
     "#achievements": { title: "Malillos | Achievements", icon: "/tab-achievements.svg" },
     "#contact": { title: "Malillos | Contact", icon: "/tab-contact.svg" },
   };
-  const [activeHref, setActiveHref] = useState<(typeof items)[number][1]>("#branding");
+  const [activeHref, setActiveHref] = useState<(typeof items)[number][1]>("#education");
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const handleNavClick = (href: string, closeMobile = false) => (event: MouseEvent<HTMLAnchorElement>) => {
@@ -431,7 +729,7 @@ function HeaderNav({
 
   return (
     <div className="sticky top-0 z-50 relative isolate w-full min-w-0">
-      <header className="relative z-[2] overflow-x-clip border-b border-black/10 bg-white/95 backdrop-blur-xl">
+      <header className="relative z-[2] overflow-x-clip border-b border-black/10 bg-white/95">
         <motion.div
           initial={{ x: "100%" }}
           animate={{ x: 0 }}
@@ -922,6 +1220,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDarkMode);
     window.localStorage.setItem(
       "portfolio-theme",
       isDarkMode ? "dark" : "light",
@@ -1186,40 +1485,133 @@ export default function Home() {
                 variants={inquiryRevealGroup}
               >
                 <Section
-                  id="branding"
+                  id="education"
                   className={cx(orbitron.variable, "section-heading-orbitron")}
                   heading={{
-                    eyebrow: "Identity",
-                    title: "Digital Signature",
+                    eyebrow: "Academic Pathway",
+                    title: "Education & Specialization",
                     subtitle:
-                      "This section outlines the core visual system and technical architectural principles.",
+                      "Institutional degree and Service Management Program (IT-SMP) major.",
                   }}
                 >
-                  <motion.div variants={scrollRevealGroup} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    <motion.div variants={scrollRevealItem}>
-                    <Card className={BRANDING_CARD_SCI}>
-                      <h3 className="font-black uppercase tracking-widest text-black mb-3">Core_Logic</h3>
-                      <p className="text-sm text-black/60 font-medium">
-                        Scalable, modular architecture built for rapid deployment and high-load stability.
-                      </p>
-                    </Card>
-                    </motion.div>
-                    <motion.div variants={scrollRevealItem}>
-                    <Card className={BRANDING_CARD_SCI}>
-                      <h3 className="font-black uppercase tracking-widest text-black mb-3">System_Color</h3>
-                      <p className="text-sm text-black/60 font-medium">
-                        High-contrast monochrome palette designed for maximum clarity and technical focus.
-                      </p>
-                    </Card>
-                    </motion.div>
-                    <motion.div variants={scrollRevealItem}>
-                    <Card className={BRANDING_CARD_SCI}>
-                      <h3 className="font-black uppercase tracking-widest text-black mb-3">Type_Engine</h3>
-                      <p className="text-sm text-black/60 font-medium">
-                        Precision robotic typography utilizing sharp-edged fonts for a technical signature.
-                      </p>
-                    </Card>
-                    </motion.div>
+                  <motion.div variants={scrollRevealGroup} className="grid gap-6">
+                    {portfolio.education.map((edu, idx) => (
+                      <motion.div key={idx} variants={scrollRevealItem}>
+                        <Card className="group relative overflow-hidden border-2 border-black/10 bg-white p-6 lg:p-8 shadow-sm">
+                          {/* Half of the Logo as Background on Mobile / Desktop Right */}
+                          {edu.logoSrc && (
+                            <div className="absolute inset-y-0 right-0 left-0 sm:left-auto sm:w-1/2 pointer-events-none overflow-hidden z-0 flex items-center justify-center sm:justify-end opacity-65 sm:opacity-95 transition-all duration-300">
+                              <div className="relative h-[85%] w-[85%] sm:h-[120%] sm:w-[120%] sm:translate-x-1/6 transition-transform duration-500 group-hover:scale-105">
+                                <Image
+                                  src={edu.logoSrc}
+                                  alt=""
+                                  fill
+                                  className="object-contain object-center sm:object-right"
+                                  priority
+                                />
+                              </div>
+                              {/* Soft gradient edge transition matching current theme */}
+                              <div className="education-logo-overlay absolute inset-0 bg-gradient-to-b sm:bg-gradient-to-r from-white/40 via-white/60 to-transparent" />
+                            </div>
+                          )}
+
+                          {/* Content Container (z-10) */}
+                          <div className="relative z-10 space-y-6">
+                            {/* Top Status & Meta Header */}
+                            <div className="flex flex-wrap items-center justify-center sm:justify-between gap-3 border-b border-black/10 pb-4">
+                              <div className="flex items-center gap-2">
+                                <span className="inline-flex items-center gap-1.5 rounded-full border border-black/15 bg-black/5 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-black">
+                                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                                  {edu.period}
+                                </span>
+                                <span className="rounded-full border border-black/10 bg-black/5 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.2em] text-black/70">
+                                  Degree Spec
+                                </span>
+                              </div>
+                            </div>
+
+                            {/* Main Title & Major Banner */}
+                            <div className="space-y-3 flex flex-col items-center sm:items-start text-center sm:text-left">
+                              <h3 className="text-2xl lg:text-3xl font-black tracking-tight text-black">
+                                {edu.degree}
+                              </h3>
+
+                              <div className="inline-flex flex-wrap items-center justify-center sm:justify-start gap-2 rounded-xl border border-black/20 bg-black/5 px-4 py-2 text-xs font-bold uppercase tracking-widest text-black shadow-xs">
+                                <FiAward className="size-4 shrink-0 text-black" />
+                                <span>Major in Service Management Program (IT-SMP)</span>
+                              </div>
+
+                              <p className="flex items-center justify-center sm:justify-start gap-2 text-sm font-bold tracking-wide text-black/80">
+                                {edu.logoSrc ? (
+                                  <Image src={edu.logoSrc} alt={edu.institution} width={22} height={22} className="size-5.5 object-contain shrink-0" />
+                                ) : (
+                                  <FiBookOpen className="size-4 shrink-0 text-black/50" />
+                                )}
+                                <span>{edu.institution}</span>
+                              </p>
+                            </div>
+
+                            {/* Divider */}
+                            <div className="my-6 border-t border-dashed border-black/15" />
+
+                            {/* Overview & Key Highlights Grid */}
+                            <div className="grid gap-6 lg:grid-cols-[1fr_1.1fr]">
+                              <div className="space-y-4 border-l-0 sm:border-l-2 border-black/80 pl-0 sm:pl-4 py-1 flex flex-col justify-between items-center sm:items-start text-center sm:text-left">
+                                <div className="space-y-3">
+                                  <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-black/40">
+                                    Program Overview
+                                  </p>
+                                  {edu.details && (
+                                    <p className="text-sm leading-relaxed font-medium text-black/75">
+                                      {edu.details}
+                                    </p>
+                                  )}
+                                </div>
+
+                                {edu.location && (
+                                  <div className="mt-4 w-full rounded-xl border border-black/15 bg-black/5 p-3.5 flex items-center justify-center sm:justify-start gap-3 shadow-xs text-black transition-all hover:border-black/40 hover:bg-black/10">
+                                    <div className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-black/15 bg-black/5 text-black">
+                                      <FiMapPin className="size-5" />
+                                    </div>
+                                    <div className="text-left">
+                                      <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-black/40">
+                                        Campus Location
+                                      </p>
+                                      <p className="text-sm font-black tracking-tight text-black">
+                                        {edu.location}
+                                      </p>
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
+
+                              {edu.highlights && edu.highlights.length > 0 && (
+                                <div className="space-y-3">
+                                  <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-black/40">
+                                    Core Program Competencies
+                                  </p>
+                                  <div className="grid gap-2.5">
+                                    {edu.highlights.map((h, hIdx) => (
+                                      <div
+                                        key={hIdx}
+                                        className="group/item flex items-start gap-3 rounded-xl border border-black/10 bg-black/5 p-3 text-black shadow-xs transition-all hover:border-black/40 hover:bg-black/10"
+                                      >
+                                        <span className="flex size-6 shrink-0 items-center justify-center rounded-lg border border-black/15 bg-black/10 text-[10px] font-bold text-black group-hover/item:bg-black group-hover/item:text-white transition-colors">
+                                          0{hIdx + 1}
+                                        </span>
+                                        <span className="text-xs font-semibold leading-snug text-black/85">
+                                          {h}
+                                        </span>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </Card>
+                      </motion.div>
+                    ))}
                   </motion.div>
                 </Section>
               </motion.div>
@@ -1242,26 +1634,40 @@ export default function Home() {
                   heading={{
                     eyebrow: "Capability",
                     title: "Technical Stack",
-                    subtitle: "Core technologies and specialized tools.",
+                    subtitle: "Core technologies, databases, and specialized developer tools.",
                   }}
                 >
-                  <motion.div variants={scrollRevealGroup} className="grid gap-8 sm:grid-cols-2">
+                  <motion.div variants={scrollRevealGroup} className="grid gap-6 md:grid-cols-3">
+                    {/* Card 1: Frontend & UI */}
                     <motion.div variants={scrollRevealItem} className="rounded-2xl border border-black/10 bg-gradient-to-b from-black/[0.02] to-transparent p-5">
                       <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-black/40">
-                        Programming & Frameworks
+                        Frontend & UI
                       </h3>
-                      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                        {portfolio.technicalSkills.map((skill) => (
+                      <div className="grid grid-cols-1 gap-2">
+                        {["HTML", "CSS", "TypeScript", "React", "Next.js", "Tailwind CSS"].map((skill) => (
                           <SkillChip key={skill} label={skill} iconMap={TECH_ICON_MAP} />
                         ))}
                       </div>
                     </motion.div>
 
+                    {/* Card 2: Backend & Databases */}
                     <motion.div variants={scrollRevealItem} className="rounded-2xl border border-black/10 bg-gradient-to-b from-black/[0.02] to-transparent p-5">
                       <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-black/40">
-                        Infrastructure & Tools
+                        Backend & Databases
                       </h3>
-                      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                      <div className="grid grid-cols-1 gap-2">
+                        {["PHP", "Node.js", "REST APIs", "MySQL", "Supabase", "Prisma"].map((skill) => (
+                          <SkillChip key={skill} label={skill} iconMap={TECH_ICON_MAP} />
+                        ))}
+                      </div>
+                    </motion.div>
+
+                    {/* Card 3: Developer Tools */}
+                    <motion.div variants={scrollRevealItem} className="rounded-2xl border border-black/10 bg-gradient-to-b from-black/[0.02] to-transparent p-5">
+                      <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-black/40">
+                        Developer Tools
+                      </h3>
+                      <div className="grid grid-cols-1 gap-2">
                         {portfolio.tools.map((tool) => (
                           <SkillChip key={tool} label={tool} iconMap={TOOL_ICON_MAP} />
                         ))}
@@ -1293,174 +1699,248 @@ export default function Home() {
                   heading={{
                     eyebrow: "Featured Work",
                     title: "Project Archive",
-                    subtitle: "Selected projects with role, highlights, and stack details.",
+                    subtitle: "Selected full-stack systems, application platforms, and software architecture.",
                   }}
                 >
                   {activeProject ? (
-                    <motion.div variants={projectRevealGroup} className="grid gap-4">
-                    <motion.div variants={projectRevealItem} className="flex flex-wrap items-center justify-between gap-3">
-                      <div className="flex items-center gap-2">
-                        {projects.map((project, i) => (
-                          <button
-                            key={project.name}
-                            type="button"
-                            aria-label={`Open project ${i + 1}`}
-                            onClick={() => setActiveProjectIndex(i)}
-                            className={cx(
-                              "project-archive-dot h-2.5 rounded-full transition-all duration-300",
-                              i === activeProjectIndex
-                                ? "project-archive-dot--active w-8 bg-black"
-                                : "w-2.5 bg-black/20 hover:bg-black/35",
-                            )}
-                          />
-                        ))}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <button
-                          type="button"
-                          onClick={() =>
-                            setActiveProjectIndex((prev) =>
-                              (prev - 1 + projects.length) % projects.length,
-                            )
-                          }
-                          className={cx(
-                            "project-archive-nav-btn rounded-lg border border-black/15 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-black/70 transition",
-                            isDarkMode
-                              ? "project-archive-nav-btn--dark"
-                              : "project-archive-nav-btn--light hover:bg-black hover:text-white",
-                          )}
-                        >
-                          Prev
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() =>
-                            setActiveProjectIndex((prev) => (prev + 1) % projects.length)
-                          }
-                          className={cx(
-                            "project-archive-nav-btn rounded-lg border border-black/15 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-black/70 transition",
-                            isDarkMode
-                              ? "project-archive-nav-btn--dark"
-                              : "project-archive-nav-btn--light hover:bg-black hover:text-white",
-                          )}
-                        >
-                          Next
-                        </button>
-                      </div>
-                    </motion.div>
+                    <motion.div variants={projectRevealGroup} className="space-y-8">
+                      {/* Sci-Fi Project Selector Deck Bar */}
+                      <motion.div variants={projectRevealItem} className="flex flex-col gap-4">
+                        <div className="flex flex-wrap items-center justify-between gap-3">
+                          <p className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-black/40">
+                            Select System Case ({activeProjectIndex + 1} / {projects.length})
+                          </p>
 
-                    <motion.div
-                      key={`${activeProject.name}-${activeProjectIndex}`}
-                      variants={projectRevealItem}
-                      initial={{ opacity: 0, x: -28, scale: 0.99, filter: "blur(4px)" }}
-                      animate={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
-                      transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                    >
-                      <Card className="relative overflow-hidden border-2 border-black/10 bg-white p-0">
-                        <div
-                          className={cx(
-                            "project-archive-hud pointer-events-none absolute inset-0 z-0",
-                            `project-archive-hud--v${(activeProjectIndex % 3) + 1}`,
-                          )}
-                          aria-hidden
-                        >
-                          <span className="project-archive-hud__grid" />
-                          <span className="project-archive-hud__scan" />
-                          <span className="project-archive-hud__ring" />
-                          <span className="project-archive-hud__ring project-archive-hud__ring--inner" />
-                          <span className="project-archive-hud__ring project-archive-hud__ring--outer" />
-                          <span className="project-archive-hud__arc project-archive-hud__arc--a" />
-                          <span className="project-archive-hud__arc project-archive-hud__arc--b" />
-                          <span className="project-archive-hud__sweep project-archive-hud__sweep--a" />
-                          <span className="project-archive-hud__sweep project-archive-hud__sweep--b" />
-                          <span className="project-archive-hud__cross project-archive-hud__cross--h" />
-                          <span className="project-archive-hud__cross project-archive-hud__cross--v" />
-                          <span className="project-archive-hud__ticks" />
-                          <span className="project-archive-hud__glyph project-archive-hud__glyph--a">ΔX-77</span>
-                          <span className="project-archive-hud__glyph project-archive-hud__glyph--b">SYS//ARCHIVE</span>
-                          <span className="project-archive-hud__glyph project-archive-hud__glyph--c">01 10 11 00</span>
-                          <span className="project-archive-hud__caution">CAUTION</span>
-                          <span className="project-archive-hud__reticle" />
-                          <span className="project-archive-hud__chevrons" />
-                          <span className="project-archive-hud__bars" />
-                          <span className="project-archive-hud__corners project-archive-hud__corners--tl" />
-                          <span className="project-archive-hud__corners project-archive-hud__corners--br" />
-                          <span className="project-archive-hud__trace project-archive-hud__trace--a" />
-                          <span className="project-archive-hud__trace project-archive-hud__trace--b" />
-                          <span className="project-archive-hud__node project-archive-hud__node--a" />
-                          <span className="project-archive-hud__node project-archive-hud__node--b" />
-                          <span className="project-archive-hud__node project-archive-hud__node--c" />
-                        </div>
-                        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(130deg,rgba(0,0,0,0.03),transparent_35%,transparent_65%,rgba(0,0,0,0.04))]" />
-                        <div className="relative z-[1] border-b border-black/10 bg-black/[0.02] px-5 py-3">
-                          <div className="flex flex-wrap items-center justify-between gap-3">
-                            <div className="flex items-center gap-2">
-                              <span className="rounded border border-black/15 bg-white px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-black/55">
-                                Case {String(activeProjectIndex + 1).padStart(2, "0")}
-                              </span>
-                              <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-black/40">
-                                Project Archive
-                              </span>
-                            </div>
-                            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-black/75">
-                              {activeProject.date}
-                            </span>
+                          <div className="flex items-center gap-2">
+                            <button
+                              type="button"
+                              onClick={() =>
+                                setActiveProjectIndex((prev) =>
+                                  (prev - 1 + projects.length) % projects.length,
+                                )
+                              }
+                              className="inline-flex items-center gap-1.5 rounded-xl border border-black/15 bg-white px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-black transition-all hover:bg-black hover:text-white shadow-xs"
+                            >
+                              ← Prev
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() =>
+                                setActiveProjectIndex((prev) => (prev + 1) % projects.length)
+                              }
+                              className="inline-flex items-center gap-1.5 rounded-xl border border-black/15 bg-white px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-black transition-all hover:bg-black hover:text-white shadow-xs"
+                            >
+                              Next →
+                            </button>
                           </div>
                         </div>
 
-                        <div className="relative z-[1] grid gap-0 lg:grid-cols-12">
-                          <div className="border-b border-black/10 p-5 lg:col-span-5 lg:border-b-0 lg:border-r">
-                            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-black/40">Project Name</p>
-                            <h3 className="mt-1 text-xl font-black leading-tight text-black">{activeProject.name}</h3>
+                        {/* Interactive Case Tabs */}
+                        <div className="flex overflow-x-auto pb-2 scrollbar-none gap-2">
+                          {projects.map((project, i) => {
+                            const isActive = i === activeProjectIndex;
+                            return (
+                              <button
+                                key={project.name}
+                                type="button"
+                                onClick={() => setActiveProjectIndex(i)}
+                                className={cx(
+                                  "group relative flex shrink-0 items-center gap-2.5 rounded-xl border px-4 py-2.5 text-left text-xs font-bold transition-transform duration-200 shadow-xs",
+                                  isActive
+                                    ? isDarkMode
+                                      ? "case-tab-active border-white !bg-white !text-black shadow-md scale-[1.02]"
+                                      : "case-tab-active border-black bg-black text-white shadow-md scale-[1.02]"
+                                    : isDarkMode
+                                      ? "border-white/20 bg-white/10 text-white/70 hover:border-white/40 hover:bg-white/15"
+                                      : "border-black/10 bg-white text-black/70 hover:border-black/40 hover:bg-black/5"
+                                )}
+                              >
+                                <span
+                                  className={cx(
+                                    "case-tab-num flex size-5 shrink-0 items-center justify-center rounded-md text-[10px] font-extrabold transition-colors",
+                                    isActive
+                                      ? isDarkMode
+                                        ? "!bg-black/15 !text-black"
+                                        : "bg-white/20 text-white"
+                                      : isDarkMode
+                                        ? "bg-white/15 text-white/80 group-hover:bg-white/25"
+                                        : "bg-black/5 text-black/60 group-hover:bg-black/10"
+                                  )}
+                                >
+                                  0{i + 1}
+                                </span>
+                                <span className="truncate max-w-[150px] sm:max-w-[200px]">
+                                  {project.name}
+                                </span>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </motion.div>
 
-                            <div className="mt-5 rounded-xl border border-black/10 bg-black/[0.02] p-4">
-                              <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-black/40">Role</p>
-                              <p className="mt-1 font-bold text-black">{activeProject.role}</p>
-                              <p className="mt-3 text-[10px] font-bold uppercase tracking-[0.22em] text-black/40">System Brief</p>
-                              <p className="mt-1 text-sm leading-relaxed font-medium text-black/70">
-                                {activeProject.description}
-                              </p>
-                            </div>
+                      {/* Main Showcase Card */}
+                      <motion.div
+                        key={`${activeProject.name}-${activeProjectIndex}`}
+                        variants={projectRevealItem}
+                        initial={{ opacity: 0, y: 16, filter: "blur(4px)" }}
+                        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                      >
+                        <Card className="group relative overflow-hidden border-2 border-black/10 bg-white p-6 lg:p-8 hover:border-black/80 hover:shadow-[0_24px_70px_-30px_rgba(0,0,0,0.24)]">
+                          <div className="grid gap-8 lg:grid-cols-12 items-start">
+                            {/* Left Column: Visual System Preview & Quick Select Deck */}
+                            <div className="space-y-6 lg:col-span-6">
+                              {/* Hero Preview Frame */}
+                              <div className="group/frame relative overflow-hidden rounded-2xl border-2 border-black/10 bg-black/5 shadow-md">
+                                {activeProject.imageSrc ? (
+                                  <div className="relative aspect-[16/10] w-full overflow-hidden">
+                                    {/* Primary Image (default) */}
+                                    <Image
+                                      src={activeProject.imageSrc}
+                                      alt={`${activeProject.name} preview`}
+                                      fill
+                                      className="object-cover transition-all duration-700 group-hover/frame:scale-105"
+                                      priority
+                                    />
 
-                            <div className="mt-5">
-                              <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.24em] text-black/40">Stack Matrix</p>
-                              <div className="flex flex-wrap gap-2">
-                                {activeProject.techStack.map((tech) => (
-                                  <Pill key={`${activeProject.name}-${tech}`}>
-                                    <span className="inline-flex items-center gap-1.5">
-                                      {(() => {
-                                        const TechIcon = PROJECT_TECH_ICON_MAP[normalizeSkillKey(tech)];
-                                        return TechIcon ? <TechIcon className="size-3.5 text-black/70" aria-hidden /> : null;
-                                      })()}
-                                      <span>{tech}</span>
+                                    {/* Hover Image (crossfade overlay) */}
+                                    {PROJECT_HOVER_IMAGE_MAP[activeProject.imageSrc] && (
+                                      <Image
+                                        src={PROJECT_HOVER_IMAGE_MAP[activeProject.imageSrc]}
+                                        alt={`${activeProject.name} hover preview`}
+                                        fill
+                                        className="object-cover opacity-0 transition-all duration-700 group-hover/frame:opacity-100 group-hover/frame:scale-105"
+                                      />
+                                    )}
+
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+                                    <div className="absolute left-4 bottom-4 flex flex-wrap items-center gap-2">
+                                      <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-black/80 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white">
+                                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                                        Case 0{activeProjectIndex + 1}
+                                      </span>
+                                      <span className="rounded-full border border-white/20 bg-white/90 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.2em] text-black">
+                                        {activeProject.date}
+                                      </span>
+                                    </div>
+                                  </div>
+                                ) : (
+                                  <div className="aspect-[16/10] bg-black/5 flex items-center justify-center">
+                                    <span className="text-xs font-bold uppercase tracking-widest text-black/40">
+                                      System Preview Ready
                                     </span>
-                                  </Pill>
-                                ))}
+                                  </div>
+                                )}
+                              </div>
+
+                              {/* Mini Project Switcher Strip */}
+                              <div className="space-y-2">
+                                <p className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-black/40">
+                                  Quick Switch Archive
+                                </p>
+                                <div className="grid grid-cols-5 gap-2">
+                                  {projects.map((proj, idx) => {
+                                    const isCurrent = idx === activeProjectIndex;
+                                    return (
+                                      <button
+                                        key={proj.name}
+                                        type="button"
+                                        onClick={() => setActiveProjectIndex(idx)}
+                                        className={cx(
+                                          "relative aspect-[16/10] overflow-hidden rounded-xl border-2 transition-transform duration-200",
+                                          isCurrent
+                                            ? "quick-switch-active border-black ring-2 ring-black/20 scale-105 shadow-sm"
+                                            : "border-black/15 opacity-60 hover:opacity-100 hover:border-black/50"
+                                        )}
+                                      >
+                                        {proj.imageSrc ? (
+                                          <Image
+                                            src={proj.imageSrc}
+                                            alt={proj.name}
+                                            fill
+                                            className="object-cover"
+                                          />
+                                        ) : (
+                                          <div className="h-full w-full bg-black/10" />
+                                        )}
+                                      </button>
+                                    );
+                                  })}
+                                </div>
                               </div>
                             </div>
-                          </div>
 
-                          <div className="p-5 lg:col-span-7">
-                            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.24em] text-black/40">Execution Highlights</p>
-                            <div className="relative">
-                              <span className="pointer-events-none absolute bottom-0 left-[15px] top-0 w-px bg-black/10" aria-hidden />
-                              <ul className="grid gap-3">
-                                {activeProject.highlights.map((h, i) => (
-                                  <li key={i} className="relative pl-10">
-                                    <span className="absolute left-0 top-0 inline-flex size-8 items-center justify-center rounded-full border border-black/15 bg-white font-mono text-[10px] font-bold text-black/60">
-                                      {String(i + 1).padStart(2, "0")}
-                                    </span>
-                                    <div className="rounded-lg border border-black/10 bg-white px-3 py-2.5">
-                                      <p className="text-sm font-medium text-black/80">{h}</p>
+                            {/* Right Column: Project Architecture & Execution Details */}
+                            <div className="space-y-6 lg:col-span-6">
+                              {/* Title & Role Header */}
+                              <div className="space-y-3">
+                                <div className="flex flex-wrap items-center gap-2">
+                                  <span className="rounded-full border border-black/15 bg-black/5 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.2em] text-black">
+                                    {activeProject.role}
+                                  </span>
+                                  <span className="text-xs font-semibold text-black/40">
+                                    • {activeProject.date}
+                                  </span>
+                                </div>
+
+                                <h3 className="text-2xl lg:text-3xl font-black tracking-tight text-black">
+                                  {activeProject.name}
+                                </h3>
+
+                                <p className="text-sm leading-relaxed font-medium text-black/75">
+                                  {activeProject.description}
+                                </p>
+                              </div>
+
+                              {/* Stack Matrix */}
+                              <div className="space-y-2.5 pt-2">
+                                <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-black/40">
+                                  Technology Stack Matrix
+                                </p>
+                                <div className="flex flex-wrap gap-2">
+                                  {activeProject.techStack.map((tech) => (
+                                    <Pill key={`${activeProject.name}-${tech}`}>
+                                      <span className="inline-flex items-center gap-1.5 font-bold">
+                                        {(() => {
+                                          const TechIcon = PROJECT_TECH_ICON_MAP[normalizeSkillKey(tech)] ?? FiCode;
+                                          return <TechIcon className="size-3.5 text-black" aria-hidden />;
+                                        })()}
+                                        <span>{tech}</span>
+                                      </span>
+                                    </Pill>
+                                  ))}
+                                </div>
+                              </div>
+
+                              {/* Execution Highlights */}
+                              <div className="space-y-3 pt-2">
+                                <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-black/40">
+                                  Key Execution Highlights
+                                </p>
+                                <div className="grid gap-2.5">
+                                  {activeProject.highlights.map((h, i) => (
+                                    <div
+                                      key={i}
+                                      className="group/h flex items-start gap-3 rounded-xl border border-black/10 bg-black/[0.02] p-3.5 transition-colors hover:border-black/40 hover:bg-black/[0.04]"
+                                    >
+                                      <span className="flex size-6 shrink-0 items-center justify-center rounded-lg border border-black/15 bg-white text-[10px] font-bold text-black group-hover/h:bg-black group-hover/h:text-white transition-colors">
+                                        0{i + 1}
+                                      </span>
+                                      <p className="text-xs font-semibold leading-relaxed text-black/85">
+                                        {h}
+                                      </p>
                                     </div>
-                                  </li>
-                                ))}
-                              </ul>
+                                  ))}
+                                </div>
+                              </div>
+
+                              {/* Continuous Live Code Terminal Animation Stream (0ms CSS Theme Swap) */}
+                              <ProjectLiveCodeTerminal techStack={activeProject.techStack} />
                             </div>
                           </div>
-                        </div>
-                      </Card>
-                    </motion.div>
+                        </Card>
+                      </motion.div>
                     </motion.div>
                   ) : null}
                 </Section>
